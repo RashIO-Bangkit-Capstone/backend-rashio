@@ -1,5 +1,10 @@
 # RashIO API
 
+## Documentation
+
+- in local machine: host:port/documentation
+- in cloud: TBA
+
 ## Contributing
 
 ### Prerequisites
