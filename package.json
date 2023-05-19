@@ -21,7 +21,7 @@
     "dotenv": "^16.0.3",
     "hapi-swagger": "^16.0.1",
     "mysql2": "^3.3.1",
-    "nanoid": "^4.0.2",
+    "nanoid": "^3.3.4",
     "sequelize": "^6.31.1"
   },
   "devDependencies": {
