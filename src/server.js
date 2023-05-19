@@ -1,9 +1,9 @@
 const Hapi = require('@hapi/hapi');
 const dotenv = require('dotenv');
 const Inert = require('@hapi/inert');
-const Pack = require('../package');
 const hapiswagger = require('hapi-swagger');
 const Vision = require('@hapi/vision');
+const Pack = require('../package.json');
 
 // module api helloWorld
 const helloWorld = require('./api/helloWorld');
