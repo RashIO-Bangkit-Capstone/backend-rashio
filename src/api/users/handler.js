@@ -30,6 +30,7 @@ class UserHandler {
     } catch (error) {
       const response = h.response({
         status: 'fail',
+        code: 400,
         message: error.message,
       });
 

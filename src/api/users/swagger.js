@@ -1,13 +1,7 @@
-const swagger = {
+const swagger = (schema) => ({
   postUserSwagger: {
     validate: {
-      payload: {
-        name: String,
-        email: String,
-        password: String,
-        confirmPassword: String,
-      },
-      tags: ['api'],
+      payload: schema.PostUserPayloadSchema,
     },
     responses: {
       201: {
@@ -40,6 +34,6 @@ const swagger = {
       },
     },
   },
-};
+});
 
 module.exports = swagger;
