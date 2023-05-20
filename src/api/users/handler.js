@@ -13,7 +13,7 @@ class UserHandler {
       const { payload } = request;
 
       this.Validator.validatePostUserPayload(payload);
-      await this.Service.checkEmailAvailable(payload.email);
+      await this.Service.checkEmailExists(payload.email);
       const id = await this.Service.addUser(payload);
 
       const response = h.response({
