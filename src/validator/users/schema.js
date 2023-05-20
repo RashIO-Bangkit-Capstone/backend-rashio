@@ -24,7 +24,7 @@ const ResponsePostUserSchema = Joi.object({
   message: Joi.string(),
   data: Joi.object({
     userId: Joi.string(),
-  }),
+  }).label('Response Post User Data'),
 }).label('Response Post User');
 
 module.exports = { PostUserPayloadSchema, ResponsePostUserSchema };
