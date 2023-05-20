@@ -1,3 +1,5 @@
+const InvariantError = require('../../exceptions/InvariantError');
+
 const schema = require('./schema');
 
 class UsersValidator {
@@ -14,7 +16,7 @@ class UsersValidator {
     }
 
     if (validationResult.error) {
-      throw new Error(validationResult.error.message);
+      throw new InvariantError(validationResult.error.message);
     }
   }
 }

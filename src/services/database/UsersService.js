@@ -2,6 +2,9 @@ const { nanoid } = require('nanoid');
 const bcrypt = require('bcrypt');
 const { User } = require('../../../db/models');
 
+const InvariantError = require('../../exceptions/InvariantError');
+const NotFoundError = require('../../exceptions/NotFoundError');
+
 class UsersService {
   constructor() {
     this.User = User;
@@ -17,17 +20,17 @@ class UsersService {
 
   async addUser({ name, email, password }) {
     const id = `user-${nanoid()}`;
-    const hasshedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     const result = await this.User.create({
       id,
       name,
       email,
-      password: hasshedPassword,
+      password: hashedPassword,
     });
 
     if (!result) {
-      throw new Error('Error creating user');
+      throw new InvariantError('Failed to add user');
     }
 
     return id;
@@ -37,13 +40,13 @@ class UsersService {
     const user = await this.User.findOne({ where: { email } });
 
     if (!user) {
-      throw new Error('email or password is incorrect');
+      throw new NotFoundError('email or password is incorrect');
     }
 
     const isPasswordMatch = await bcrypt.compare(password, user.password);
 
     if (!isPasswordMatch) {
-      throw new Error('email or password is incorrect');
+      throw new NotFoundError('email or password is incorrect');
     }
 
     return user;

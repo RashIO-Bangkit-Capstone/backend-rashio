@@ -16,6 +16,15 @@ const PostUserPayloadSchema = Joi.object({
     'any.required': 'confirm password is required',
     'string.min': 'confirm password must be at least 8 characters',
   }),
-});
+}).label('Post User Payload');
 
-module.exports = { PostUserPayloadSchema };
+const ResponsePostUserSchema = Joi.object({
+  status: Joi.string(),
+  code: Joi.number(),
+  message: Joi.string(),
+  data: Joi.object({
+    userId: Joi.string(),
+  }),
+}).label('Response Post User');
+
+module.exports = { PostUserPayloadSchema, ResponsePostUserSchema };

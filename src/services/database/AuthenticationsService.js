@@ -1,4 +1,5 @@
 const { Authentication } = require('../../../db/models');
+const InvariantError = require('../../exceptions/InvariantError');
 
 class AuthenticationsService {
   constructor() {
@@ -9,7 +10,7 @@ class AuthenticationsService {
     const result = await this.Authentication.create({ refreshToken });
 
     if (!result) {
-      throw new Error('Error adding refresh token');
+      throw new InvariantError('Failed to add refresh token');
     }
   }
 }

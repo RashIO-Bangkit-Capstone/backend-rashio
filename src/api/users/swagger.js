@@ -6,20 +6,7 @@ const swagger = (schema) => ({
     responses: {
       201: {
         description: 'Success',
-        schema: {
-          type: 'object',
-          properties: {
-            status: { type: 'string' },
-            code: { type: 'number' },
-            message: { type: 'string' },
-            data: {
-              type: 'object',
-              properties: {
-                userId: { type: 'string' },
-              },
-            },
-          },
-        },
+        schema: schema.ResponsePostUserSchema,
       },
       400: {
         description: 'Bad Request',

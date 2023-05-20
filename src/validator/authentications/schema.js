@@ -8,6 +8,19 @@ const PostAuthenticationPayloadSchema = Joi.object({
   password: Joi.string().required().messages({
     'any.required': 'password is required',
   }),
-});
+}).label('Post Authentication Payload');
 
-module.exports = { PostAuthenticationPayloadSchema };
+const ResponsePostAuthenticationSchema = Joi.object({
+  status: Joi.string(),
+  code: Joi.number(),
+  message: Joi.string(),
+  data: Joi.object({
+    accessToken: Joi.string(),
+    refreshToken: Joi.string(),
+  }),
+}).label('Response Post Authentication');
+
+module.exports = {
+  PostAuthenticationPayloadSchema,
+  ResponsePostAuthenticationSchema,
+};

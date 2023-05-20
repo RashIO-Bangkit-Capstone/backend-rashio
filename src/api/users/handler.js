@@ -9,34 +9,23 @@ class UserHandler {
   }
 
   async postUserHandler(request, h) {
-    try {
-      const { payload } = request;
+    const { payload } = request;
 
-      this.Validator.validatePostUserPayload(payload);
-      await this.Service.checkEmailAvailable(payload.email);
-      const id = await this.Service.addUser(payload);
+    this.Validator.validatePostUserPayload(payload);
+    await this.Service.checkEmailAvailable(payload.email);
+    const id = await this.Service.addUser(payload);
 
-      const response = h.response({
-        status: 'success',
-        code: 201,
-        message: 'Registration success',
-        data: {
-          userId: id,
-        },
-      });
+    const response = h.response({
+      status: 'success',
+      code: 201,
+      message: 'Registration success',
+      data: {
+        userId: id,
+      },
+    });
 
-      response.code(201);
-      return response;
-    } catch (error) {
-      const response = h.response({
-        status: 'fail',
-        code: 400,
-        message: error.message,
-      });
-
-      response.code(400);
-      return response;
-    }
+    response.code(201);
+    return response;
   }
 }
 

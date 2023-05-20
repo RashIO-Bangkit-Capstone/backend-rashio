@@ -1,4 +1,5 @@
 const schema = require('./schema');
+const InvariantError = require('../../exceptions/InvariantError');
 
 class AuthenticationsValidator {
   constructor() {
@@ -11,7 +12,7 @@ class AuthenticationsValidator {
     const validationResult = PostAuthenticationPayloadSchema.validate(payload);
 
     if (validationResult.error) {
-      throw new Error(validationResult.error.message);
+      throw new InvariantError(validationResult.error.message);
     }
   }
 }

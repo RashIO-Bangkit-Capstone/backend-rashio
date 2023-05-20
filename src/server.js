@@ -5,15 +5,13 @@ const hapiswagger = require('hapi-swagger');
 const Vision = require('@hapi/vision');
 const Jwt = require('@hapi/jwt');
 const Pack = require('../package.json');
-
+const errors = require('./api/errors');
 // module api helloWorld
 const helloWorld = require('./api/helloWorld');
-
 // module api users
 const users = require('./api/users');
 const UsersService = require('./services/database/UsersService');
 const UsersValidator = require('./validator/users');
-
 // module api authentications
 const authentications = require('./api/authentications');
 const AuthenticationsService = require('./services/database/AuthenticationsService');
@@ -97,6 +95,9 @@ const init = async () => {
         tokenManager,
         validator: authenticationsValidator,
       },
+    },
+    {
+      plugin: errors,
     },
   ]);
 
