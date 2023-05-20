@@ -7,7 +7,6 @@ const swagger = {
         password: String,
         confirmPassword: String,
       },
-      tags: ['api'],
     },
     responses: {
       201: {
