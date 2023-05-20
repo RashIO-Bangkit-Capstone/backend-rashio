@@ -7,7 +7,7 @@ class UsersService {
     this.User = User;
   }
 
-  async checkEmailExists(email) {
+  async checkEmailAvailable(email) {
     const user = await this.User.findOne({ where: { email } });
 
     if (user) {
@@ -31,6 +31,22 @@ class UsersService {
     }
 
     return id;
+  }
+
+  async verifyUserCredential({ email, password }) {
+    const user = await this.User.findOne({ where: { email } });
+
+    if (!user) {
+      throw new Error('email or password is incorrect');
+    }
+
+    const isPasswordMatch = await bcrypt.compare(password, user.password);
+
+    if (!isPasswordMatch) {
+      throw new Error('email or password is incorrect');
+    }
+
+    return user;
   }
 }
 

@@ -7,7 +7,9 @@
     "start": "node ./src/server.js",
     "start-dev": "nodemon ./src/server.js",
     "lint": "eslint ./src ./db",
-    "lint-fix": "eslint ./src ./db --fix"
+    "lint-fix": "eslint ./src ./db --fix",
+    "db:migrate": "npx sequelize-cli db:migrate",
+    "db:migrate:undo": "npx sequelize-cli db:migrate:undo"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,7 @@
   "dependencies": {
     "@hapi/hapi": "^21.3.2",
     "@hapi/inert": "^7.1.0",
+    "@hapi/jwt": "^3.2.0",
     "@hapi/vision": "^7.0.1",
     "auto-bind": "^4.0.0",
     "bcrypt": "^5.1.0",
