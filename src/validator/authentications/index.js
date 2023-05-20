@@ -15,6 +15,27 @@ class AuthenticationsValidator {
       throw new InvariantError(validationResult.error.message);
     }
   }
+
+  validatePutAuthenticationPayload(payload) {
+    const { PutAuthenticationPayloadSchema } = this.schema;
+
+    const validationResult = PutAuthenticationPayloadSchema.validate(payload);
+
+    if (validationResult.error) {
+      throw new InvariantError(validationResult.error.message);
+    }
+  }
+
+  validateDeleteAuthenticationPayload(payload) {
+    const { DeleteAuthenticationPayloadSchema } = this.schema;
+
+    const validationResult =
+      DeleteAuthenticationPayloadSchema.validate(payload);
+
+    if (validationResult.error) {
+      throw new InvariantError(validationResult.error.message);
+    }
+  }
 }
 
 module.exports = AuthenticationsValidator;
