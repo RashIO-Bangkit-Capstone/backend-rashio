@@ -9,6 +9,7 @@ const config = require('../config/config')[env];
 
 const db = {};
 const User = require('./user');
+const Authentication = require('./authentication');
 
 let sequelize;
 if (config.use_env_variable) {
@@ -50,5 +51,6 @@ db.Sequelize = Sequelize;
 
 // define models
 db.User = User(sequelize, Sequelize);
+db.Authentication = Authentication(sequelize, Sequelize);
 
 module.exports = db;
