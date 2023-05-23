@@ -12,7 +12,7 @@ class UsersValidator {
     const validationResult = PostUserPayloadSchema.validate(payload);
 
     if (payload.password !== payload.confirmPassword) {
-      validationResult.error = new Error("password doesn't match");
+      validationResult.error = new InvariantError("password doesn't match");
     }
 
     if (validationResult.error) {
@@ -36,7 +36,7 @@ class UsersValidator {
     const validationResult = PutUserPasswordPayloadSchema.validate(payload);
 
     if (payload.newPassword !== payload.confirmPassword) {
-      validationResult.error = new Error("password doesn't match");
+      validationResult.error = new InvariantError("password doesn't match");
     }
 
     if (validationResult.error) {
