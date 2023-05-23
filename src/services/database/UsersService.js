@@ -4,6 +4,7 @@ const { User } = require('../../../db/models');
 
 const InvariantError = require('../../exceptions/InvariantError');
 const NotFoundError = require('../../exceptions/NotFoundError');
+const AuthorizationError = require('../../exceptions/AuthorizationError');
 
 class UsersService {
   constructor() {
@@ -14,7 +15,7 @@ class UsersService {
     const user = await this.User.findOne({ where: { email } });
 
     if (user) {
-      throw new Error('Email already exists');
+      throw new InvariantError('email already used');
     }
   }
 
@@ -50,6 +51,48 @@ class UsersService {
     }
 
     return user;
+  }
+
+  verifyUserAccess(id, credentialId) {
+    if (id !== credentialId) {
+      throw new AuthorizationError(
+        'You are not authorized to access this resource'
+      );
+    }
+  }
+
+  async getUserById(id) {
+    const user = await this.User.findOne({
+      where: { id },
+      attributes: { exclude: ['password', 'createdAt', 'updatedAt'] },
+    });
+
+    if (!user) {
+      throw new NotFoundError('User not found');
+    }
+
+    return user;
+  }
+
+  async editUserById(id, { name, email }) {
+    const result = await this.User.update({ name, email }, { where: { id } });
+
+    if (!result) {
+      throw new NotFoundError('User not found');
+    }
+  }
+
+  async editUserPasswordById(id, password) {
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const result = await this.User.update(
+      { password: hashedPassword },
+      { where: { id } }
+    );
+
+    if (!result) {
+      throw new NotFoundError('User not found');
+    }
   }
 }
 

@@ -6,6 +6,7 @@ class ErrorsHandler {
     if (response instanceof ClientError) {
       const newResponse = h.response({
         status: 'fail',
+        code: response.statusCode,
         message: response.message,
       });
       newResponse.code(response.statusCode);
