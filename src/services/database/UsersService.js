@@ -11,7 +11,7 @@ class UsersService {
     this.User = User;
   }
 
-  async checkEmailAvailable(email) {
+  async checkEmailExists(email) {
     const user = await this.User.findOne({ where: { email } });
 
     if (user) {
