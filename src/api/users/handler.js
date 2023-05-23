@@ -27,6 +27,68 @@ class UserHandler {
     response.code(201);
     return response;
   }
+
+  async getUserByIdHandler(request, h) {
+    const { id } = request.params;
+    const { id: credentialId } = request.auth.credentials;
+
+    this.Service.verifyUserAccess(id, credentialId);
+    const user = await this.Service.getUserById(id);
+
+    const response = h.response({
+      status: 'success',
+      code: 200,
+      data: {
+        name: user.name,
+        email: user.email,
+      },
+    });
+
+    return response;
+  }
+
+  async putUserByIdHandler(request, h) {
+    const { id } = request.params;
+    const { id: credentialId } = request.auth.credentials;
+    const { payload } = request;
+
+    this.Validator.validatePutUserPayload(payload);
+    this.Service.verifyUserAccess(id, credentialId);
+
+    await this.Service.editUserById(id, payload);
+
+    const response = h.response({
+      status: 'success',
+      code: 200,
+      message: 'User updated',
+      data: {
+        userId: id,
+      },
+    });
+
+    return response;
+  }
+
+  async putUserPasswordByIdHandler(request, h) {
+    const { id } = request.params;
+    const { id: credentialId } = request.auth.credentials;
+    const { payload } = request;
+
+    this.Validator.validatePutUserPasswordPayload(payload);
+    this.Service.verifyUserAccess(id, credentialId);
+    await this.Service.editUserPasswordById(id, payload.password);
+
+    const response = h.response({
+      status: 'success',
+      code: 200,
+      message: 'User updated',
+      data: {
+        userId: id,
+      },
+    });
+
+    return response;
+  }
 }
 
 module.exports = UserHandler;
