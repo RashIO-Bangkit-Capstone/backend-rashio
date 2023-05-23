@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
-const process = require('process');
+require('dotenv').config();
 
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
@@ -9,6 +9,7 @@ const config = require('../config/config')[env];
 
 const db = {};
 const User = require('./user');
+const Authentication = require('./authentication');
 
 let sequelize;
 if (config.use_env_variable) {
@@ -50,5 +51,6 @@ db.Sequelize = Sequelize;
 
 // define models
 db.User = User(sequelize, Sequelize);
+db.Authentication = Authentication(sequelize, Sequelize);
 
 module.exports = db;

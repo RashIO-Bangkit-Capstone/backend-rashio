@@ -3,15 +3,20 @@ const dotenv = require('dotenv');
 const Inert = require('@hapi/inert');
 const hapiswagger = require('hapi-swagger');
 const Vision = require('@hapi/vision');
+const Jwt = require('@hapi/jwt');
 const Pack = require('../package.json');
-
+const errors = require('./api/errors');
 // module api helloWorld
 const helloWorld = require('./api/helloWorld');
-
 // module api users
 const users = require('./api/users');
 const UsersService = require('./services/database/UsersService');
 const UsersValidator = require('./validator/users');
+// module api authentications
+const authentications = require('./api/authentications');
+const AuthenticationsService = require('./services/database/AuthenticationsService');
+const AuthenticationsValidator = require('./validator/authentications');
+const tokenManager = require('./tokenize/TokenManager');
 
 dotenv.config();
 
@@ -19,6 +24,9 @@ const init = async () => {
   // create instance of USER service and validator
   const usersService = new UsersService();
   const usersValidator = new UsersValidator();
+  // create instance of AUTHENTICATION service and token manager
+  const authenticationsService = new AuthenticationsService();
+  const authenticationsValidator = new AuthenticationsValidator();
 
   const server = Hapi.server({
     port: process.env.PORT || 5000,
@@ -41,11 +49,31 @@ const init = async () => {
   await server.register([
     Inert,
     Vision,
+    Jwt,
     {
       plugin: hapiswagger,
       options: swaggerOptions,
     },
   ]);
+
+  // register auth strategy
+  server.auth.strategy('rashio_jwt', 'jwt', {
+    keys: process.env.ACCESS_TOKEN_KEY,
+    verify: {
+      aud: false,
+      iss: false,
+      sub: false,
+      maxAgeSec: process.env.ACCESS_TOKEN_AGE,
+    },
+    validate: (artifacts) => ({
+      isValid: true,
+      credentials: {
+        id: artifacts.decoded.payload.id,
+        name: artifacts.decoded.payload.name,
+        email: artifacts.decoded.payload.email,
+      },
+    }),
+  });
 
   // register module api
   await server.register([
@@ -58,6 +86,18 @@ const init = async () => {
         service: usersService,
         validator: usersValidator,
       },
+    },
+    {
+      plugin: authentications,
+      options: {
+        authenticationsService,
+        usersService,
+        tokenManager,
+        validator: authenticationsValidator,
+      },
+    },
+    {
+      plugin: errors,
     },
   ]);
 
