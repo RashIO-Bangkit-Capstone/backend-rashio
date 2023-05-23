@@ -76,7 +76,7 @@ class UserHandler {
 
     this.Validator.validatePutUserPasswordPayload(payload);
     this.Service.verifyUserAccess(id, credentialId);
-    await this.Service.editUserPasswordById(id, payload.password);
+    await this.Service.editUserPasswordById(id, payload.newPassword);
 
     const response = h.response({
       status: 'success',
