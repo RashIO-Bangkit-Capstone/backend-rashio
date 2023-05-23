@@ -14,7 +14,6 @@ const config = {
     database: process.env.DB_NAME_PROD,
     host: process.env.DB_HOST_PROD,
     dialect: process.env.DB_DIALECT_PROD || 'mysql',
-    logging: false,
   },
 };
 

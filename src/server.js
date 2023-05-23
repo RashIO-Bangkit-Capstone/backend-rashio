@@ -4,18 +4,14 @@ const Inert = require('@hapi/inert');
 const hapiswagger = require('hapi-swagger');
 const Vision = require('@hapi/vision');
 const Pack = require('../package.json');
-const errors = require('./api/errors');
+
 // module api helloWorld
 const helloWorld = require('./api/helloWorld');
+
 // module api users
 const users = require('./api/users');
 const UsersService = require('./services/database/UsersService');
 const UsersValidator = require('./validator/users');
-// module api authentications
-const authentications = require('./api/authentications');
-const AuthenticationsService = require('./services/database/AuthenticationsService');
-const AuthenticationsValidator = require('./validator/authentications');
-const tokenManager = require('./tokenize/TokenManager');
 
 dotenv.config();
 
@@ -62,18 +58,6 @@ const init = async () => {
         service: usersService,
         validator: usersValidator,
       },
-    },
-    {
-      plugin: authentications,
-      options: {
-        authenticationsService,
-        usersService,
-        tokenManager,
-        validator: authenticationsValidator,
-      },
-    },
-    {
-      plugin: errors,
     },
   ]);
 
