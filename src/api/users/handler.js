@@ -9,33 +9,85 @@ class UserHandler {
   }
 
   async postUserHandler(request, h) {
-    try {
-      const { payload } = request;
+    const { payload } = request;
 
-      this.Validator.validatePostUserPayload(payload);
-      await this.Service.checkEmailExists(payload.email);
-      const id = await this.Service.addUser(payload);
+    this.Validator.validatePostUserPayload(payload);
+    await this.Service.checkEmailAvailable(payload.email);
+    const id = await this.Service.addUser(payload);
 
-      const response = h.response({
-        status: 'success',
-        code: 201,
-        message: 'Registration success',
-        data: {
-          userId: id,
-        },
-      });
+    const response = h.response({
+      status: 'success',
+      code: 201,
+      message: 'Registration success',
+      data: {
+        userId: id,
+      },
+    });
 
-      response.code(201);
-      return response;
-    } catch (error) {
-      const response = h.response({
-        status: 'fail',
-        message: error.message,
-      });
+    response.code(201);
+    return response;
+  }
 
-      response.code(400);
-      return response;
-    }
+  async getUserByIdHandler(request, h) {
+    const { id } = request.params;
+    const { id: credentialId } = request.auth.credentials;
+
+    this.Service.verifyUserAccess(id, credentialId);
+    const user = await this.Service.getUserById(id);
+
+    const response = h.response({
+      status: 'success',
+      code: 200,
+      data: {
+        name: user.name,
+        email: user.email,
+      },
+    });
+
+    return response;
+  }
+
+  async putUserByIdHandler(request, h) {
+    const { id } = request.params;
+    const { id: credentialId } = request.auth.credentials;
+    const { payload } = request;
+
+    this.Validator.validatePutUserPayload(payload);
+    this.Service.verifyUserAccess(id, credentialId);
+
+    await this.Service.editUserById(id, payload);
+
+    const response = h.response({
+      status: 'success',
+      code: 200,
+      message: 'User updated',
+      data: {
+        userId: id,
+      },
+    });
+
+    return response;
+  }
+
+  async putUserPasswordByIdHandler(request, h) {
+    const { id } = request.params;
+    const { id: credentialId } = request.auth.credentials;
+    const { payload } = request;
+
+    this.Validator.validatePutUserPasswordPayload(payload);
+    this.Service.verifyUserAccess(id, credentialId);
+    await this.Service.editUserPasswordById(id, payload.newPassword);
+
+    const response = h.response({
+      status: 'success',
+      code: 200,
+      message: 'User updated',
+      data: {
+        userId: id,
+      },
+    });
+
+    return response;
   }
 }
 
