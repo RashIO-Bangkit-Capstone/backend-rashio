@@ -35,7 +35,7 @@ class UsersValidator {
 
     const validationResult = PutUserPasswordPayloadSchema.validate(payload);
 
-    if (payload.password !== payload.confirmPassword) {
+    if (payload.newPassword !== payload.confirmPassword) {
       validationResult.error = new Error("password doesn't match");
     }
 
