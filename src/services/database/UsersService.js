@@ -19,7 +19,15 @@ class UsersService {
     }
   }
 
-  async addUser({ name, email, password }) {
+  async checkPhoneNumberAvailable(phoneNumber) {
+    const user = await this.User.findOne({ where: { phoneNumber } });
+
+    if (user) {
+      throw new InvariantError('phone number already used');
+    }
+  }
+
+  async addUser({ name, email, password, phoneNumber }) {
     const id = `user-${nanoid()}`;
     const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -28,6 +36,7 @@ class UsersService {
       name,
       email,
       password: hashedPassword,
+      phoneNumber,
     });
 
     if (!result) {
@@ -74,8 +83,11 @@ class UsersService {
     return user;
   }
 
-  async editUserById(id, { name, email }) {
-    const result = await this.User.update({ name, email }, { where: { id } });
+  async editUserById(id, { name, email, phoneNumber }) {
+    const result = await this.User.update(
+      { name, email, phoneNumber },
+      { where: { id } }
+    );
 
     if (!result) {
       throw new NotFoundError('User not found');

@@ -13,6 +13,8 @@ class UserHandler {
 
     this.Validator.validatePostUserPayload(payload);
     await this.Service.checkEmailAvailable(payload.email);
+    await this.Service.checkPhoneNumberAvailable(payload.phoneNumber);
+
     const id = await this.Service.addUser(payload);
 
     const response = h.response({
@@ -41,6 +43,7 @@ class UserHandler {
       data: {
         name: user.name,
         email: user.email,
+        phoneNumber: user.phoneNumber,
       },
     });
 
