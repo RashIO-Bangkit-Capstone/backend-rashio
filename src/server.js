@@ -17,6 +17,11 @@ const authentications = require('./api/authentications');
 const AuthenticationsService = require('./services/database/AuthenticationsService');
 const AuthenticationsValidator = require('./validator/authentications');
 const tokenManager = require('./tokenize/TokenManager');
+// module api prediction
+const predictions = require('./api/predictions');
+const BucketService = require('./services/storage/BucketService');
+const PredictionLogsService = require('./services/database/PredictionLogsService');
+const PredictionsValidator = require('./validator/predictions');
 
 dotenv.config();
 
@@ -27,6 +32,10 @@ const init = async () => {
   // create instance of AUTHENTICATION service and token manager
   const authenticationsService = new AuthenticationsService();
   const authenticationsValidator = new AuthenticationsValidator();
+  // create instance of prediction service and validator
+  const bucketService = new BucketService();
+  const predictionLogsService = new PredictionLogsService();
+  const predictionsValidator = new PredictionsValidator();
 
   const server = Hapi.server({
     port: process.env.PORT || 5000,
@@ -75,6 +84,45 @@ const init = async () => {
     }),
   });
 
+  // testing
+  // server.route({
+  //   method: 'POST',
+  //   path: '/upload',
+  //   options: {
+  //     payload: {
+  //       maxBytes: 512000,
+  //       allow: 'multipart/form-data',
+  //       multipart: true,
+  //       output: 'stream',
+  //     },
+  //   },
+  //   handler: async (request, h) => {
+  //     const { file } = request.payload;
+
+  //     const fileType = file.hapi.headers['content-type'].split('/')[1];
+  //     const fileName = `${Date.now()}.${fileType}`;
+
+  //     console.log(fileName);
+
+  //     // const filebucket = bucket.file(file.hapi.filename);
+  //     // filebucket
+  //     //   .save(file._data)
+  //     //   .then(() => {
+  //     //     console.log('file uploaded');
+  //     //   })
+  //     //   .catch((err) => {
+  //     //     console.log(err);
+  //     //   });
+
+  //     return h
+  //       .response({
+  //         status: 'success',
+  //       })
+  //       .code(201);
+  //   },
+  // });
+  // end testing
+
   // register module api
   await server.register([
     {
@@ -94,6 +142,14 @@ const init = async () => {
         usersService,
         tokenManager,
         validator: authenticationsValidator,
+      },
+    },
+    {
+      plugin: predictions,
+      options: {
+        bucketService,
+        predictionLogsService,
+        validator: predictionsValidator,
       },
     },
     {
