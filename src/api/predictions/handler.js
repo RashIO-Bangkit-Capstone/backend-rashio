@@ -1,0 +1,48 @@
+const autoBind = require('auto-bind');
+
+class PredictionsHandler {
+  constructor(bucketService, predictionLogsService, validator) {
+    this.BucketService = bucketService;
+    this.PredictionLogsService = predictionLogsService;
+    this.Validator = validator;
+
+    autoBind(this);
+  }
+
+  async postPredictionHandler(request, h) {
+    const { id: userId } = request.auth.credentials;
+
+    const { image } = request.payload;
+
+    this.Validator.validatePostPredictionHeader(image.hapi.headers);
+
+    const imageLocation = await this.BucketService.uploadImage(image);
+
+    // TODO: call python script here
+
+    // TODO: get result and percentage from python script
+
+    await this.PredictionLogsService.addPredictionLog({
+      userId,
+      result: 'panu',
+      percentage: 0.7,
+      imageUrl: imageLocation,
+    });
+
+    const response = h.response({
+      status: 'success',
+      code: 201,
+      message: 'Detection success',
+      data: {
+        result: 'panu',
+        percentage: 0.7,
+      },
+    });
+
+    response.code(201);
+
+    return response;
+  }
+}
+
+module.exports = PredictionsHandler;
