@@ -43,6 +43,27 @@ class PredictionsHandler {
 
     return response;
   }
+
+  async getPredictionsHandler(request, h) {
+    const { userId } = request.params;
+    const { id: credentialId } = request.auth.credentials;
+
+    this.PredictionLogsService.verifyOwner(userId, credentialId);
+    const predictionLogs =
+      await this.PredictionLogsService.getPredictionLogsByUserId(userId);
+
+    const response = h.response({
+      status: 'success',
+      code: 200,
+      data: {
+        predictionLogs,
+      },
+    });
+
+    response.code(200);
+
+    return response;
+  }
 }
 
 module.exports = PredictionsHandler;

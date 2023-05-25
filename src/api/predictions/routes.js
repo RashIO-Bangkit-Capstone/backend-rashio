@@ -18,6 +18,19 @@ const routes = (handler, swagger) => [
       },
     },
   },
+  {
+    method: 'GET',
+    path: '/predictions/{userId}',
+    handler: handler.getPredictionsHandler,
+    options: {
+      auth: 'rashio_jwt',
+      description: 'Get predictions logs by user id',
+      tags: ['api'],
+      plugins: {
+        'hapi-swagger': swagger.getPredictionsSwagger,
+      },
+    },
+  },
 ];
 
 module.exports = routes;
