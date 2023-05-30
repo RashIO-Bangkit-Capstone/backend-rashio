@@ -23,6 +23,18 @@ const swagger = (schema) => ({
       },
     },
   },
+  getPredictionsSwagger: {
+    validate: {
+      headers: schema.AuthorizationHeaderSchema,
+      params: schema.GetPredictionsParamsSchema,
+    },
+    responses: {
+      200: {
+        description: 'Success',
+        schema: schema.ResponseGetPredictionsSchema,
+      },
+    },
+  },
 });
 
 module.exports = swagger;

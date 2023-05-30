@@ -2,31 +2,51 @@
 
 ## Documentation
 
-- in local machine: host:port/documentation
-- in cloud: TBA
+http://34.128.112.254/documentation
 
-## Contributing
+## Endpoints
 
-### Prerequisites
+| Method | Endpoint                 | Description                        |
+| ------ | ------------------------ | ---------------------------------- |
+| GET    | /                        | Hello world                        |
+| GET    | /documentation           | Documentation                      |
+| --     | --                       | --                                 |
+| POST   | /users                   | Create a user (register)           |
+| GET    | /users/{id}              | Get user data                      |
+| PUT    | /users/{id}              | Update user data                   |
+| PUT    | /users/{id}/password     | Update user password               |
+| --     | --                       | --                                 |
+| POST   | /authentications         | Create a session (login)           |
+| PUT    | /authentications         | Update a session (refresh token)   |
+| DELETE | /authentications         | Delete a session (logout)          |
+| --     | --                       | --                                 |
+| POST   | /predictions             | Create a prediction (upload image) |
+| GET    | /predictions/{userId}    | Get log predictions from a user    |
+| --     | --                       | --                                 |
+| GET    | /diseases/{nameDiseases} | Get disease description            |
+| POST   | /diseases                | Create a disease description       |
+| PUT    | /diseases/{nameDiseases} | Update a disease description       |
 
-- [Node.js](https://nodejs.org/en/) (v14.15.4)
-- [NPM](https://www.npmjs.com/) (v6.14.10)
-- [EsLint](https://eslint.org/) (v7.19.0)
-- [Prettier](https://prettier.io/) (v2.2.1)
-- [MySQL](https://www.mysql.com/) (v8.0.23) or you can use [XAMPP](https://www.apachefriends.org/index.html) (v3.2.4)
+## Checklist
 
-### Setup
+### Endpoints
 
-1. Clone this repository to your local machine
+- [x] GET /
+- [x] POST /users
+- [x] GET /users/{id}
+- [x] PUT /users/{id}
+- [x] PUT /users/{id}/password
+- [x] POST /authentications
+- [x] PUT /authentications
+- [x] DELETE /authentications
+- [x] POST /predictions
+- [ ] GET /predictions/{userId}
+- [ ] GET /diseases/{nameDiseases}
+- [ ] POST /diseases
+- [ ] PUT /diseases/{nameDiseases}
 
-```bash
-git clone https://github.com/RashIO-Bangkit-Capstone/backend-rashio.git
-```
+### Deployment
 
-2. Install all dependencies
-
-```bash
-npm install
-```
-
-3. Create a new file `.env` in the root directory of this repository, then copy the content of `.env.example` to the `.env` file that you just created
+- [x] Deploy dev API in GCP
+- [ ] Deploy prod API in GCP
+- [ ] Deploy ML model in GCP
