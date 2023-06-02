@@ -57,7 +57,7 @@ db.Sequelize = Sequelize;
 db.User = User(sequelize, Sequelize);
 db.Authentication = Authentication(sequelize, Sequelize);
 db.Predictionlog = Predictionlog(sequelize, Sequelize);
-db.Diseases = Disease(sequelize, Sequelize);
+db.Disease = Disease(sequelize, Sequelize);
 db.DiseaseDescription = DiseaseDescription(sequelize, Sequelize);
 db.DiseaseTreatment = DiseaseTreatment(sequelize, Sequelize);
 

@@ -15,6 +15,16 @@ class DiseasesValidator {
       throw new InvariantError(validationResult.error.message);
     }
   }
+
+  validatePutDiseasesPayload(payload) {
+    const { PutDiseasePayloadSchema } = this.schema;
+
+    const validationResult = PutDiseasePayloadSchema.validate(payload);
+
+    if (validationResult.error) {
+      throw new InvariantError(validationResult.error.message);
+    }
+  }
 }
 
 module.exports = DiseasesValidator;

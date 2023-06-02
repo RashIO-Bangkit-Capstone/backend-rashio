@@ -8,12 +8,12 @@ class DiseasesHandler {
     autoBind(this);
   }
 
-  async postDiseasesHandler(request, h) {
+  async postDiseaseHandler(request, h) {
     const { payload } = request;
 
     this.Validator.validatePostDiseasesPayload(payload);
 
-    await this.Service.checkDiseaseNameAvailable(payload.name);
+    await this.Service.checkDiseaseNameAvailability(payload.name);
     const disease = await this.Service.addDisease(payload);
 
     const response = h.response({
@@ -29,6 +29,64 @@ class DiseasesHandler {
     response.code(201);
 
     return response;
+  }
+
+  async getDiseasesHandler() {
+    const diseases = await this.Service.getDiseases();
+
+    return {
+      status: 'success',
+      code: 200,
+      message: 'diseases retrieved successfully',
+      data: diseases,
+    };
+  }
+
+  async getDiseaseByNameHandler(request, h) {
+    const { name } = request.params;
+
+    await this.Service.checkDiseaseAvailableByName(name);
+    const disease = await this.Service.getDiseaseByName(name);
+
+    return h.response({
+      status: 'success',
+      code: 200,
+      message: 'disease retrieved successfully',
+      data: disease,
+    });
+  }
+
+  async putDiseaseByNameHandler(request, h) {
+    const { name } = request.params;
+    const { payload } = request;
+
+    this.Validator.validatePutDiseasesPayload(payload);
+
+    await this.Service.checkDiseaseAvailableByName(name);
+    await this.Service.updateDiseaseByName(name, payload);
+
+    const response = h.response({
+      status: 'success',
+      code: 201,
+      message: 'disease updated successfully',
+    });
+
+    response.code(201);
+
+    return response;
+  }
+
+  async deleteDiseaseByNameHandler(request, h) {
+    const { name } = request.params;
+
+    await this.Service.checkDiseaseAvailableByName(name);
+    await this.Service.deleteDiseaseByName(name);
+
+    return h.response({
+      status: 'success',
+      code: 200,
+      message: 'disease deleted successfully',
+    });
   }
 }
 
