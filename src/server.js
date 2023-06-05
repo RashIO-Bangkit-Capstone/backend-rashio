@@ -59,6 +59,7 @@ const init = async () => {
       title: 'RashIO API Documentation',
       version: Pack.version,
     },
+    schemes: process.env.NODE_ENV === 'production' ? ['https'] : ['http'],
   };
 
   // register plugin
