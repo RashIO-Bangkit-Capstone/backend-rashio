@@ -15,7 +15,7 @@ class UsersService {
     const user = await this.User.findOne({ where: { email } });
 
     if (user) {
-      throw new InvariantError('email already used');
+      throw new InvariantError('Email already used');
     }
   }
 
@@ -23,7 +23,7 @@ class UsersService {
     const user = await this.User.findOne({ where: { phoneNumber } });
 
     if (user) {
-      throw new InvariantError('phone number already used');
+      throw new InvariantError('Phone number already used');
     }
   }
 
