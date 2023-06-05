@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const { User } = require('../../../db/models');
 
 const InvariantError = require('../../exceptions/InvariantError');
+const ClientError = require('../../exceptions/ClientError');
 const NotFoundError = require('../../exceptions/NotFoundError');
 const AuthorizationError = require('../../exceptions/AuthorizationError');
 
@@ -83,6 +84,28 @@ class UsersService {
     return user;
   }
 
+  async checkEmailChanged(id, email){
+    const user = await this.User.findOne({ where: { id } });
+
+    if (user.email === email) {
+      // email not changed
+      return;
+    }
+
+    await this.checkEmailAvailable(email);
+  }
+
+  async checkPhoneNumberChanged(id, phoneNumber){
+    const user = await this.User.findOne({ where: { id } });
+
+    if (user.phoneNumber === phoneNumber) {
+      // phoneNumber not changed
+      return;
+    }
+
+    await this.checkPhoneNumberAvailable(phoneNumber);
+  }
+
   async editUserById(id, { name, email, phoneNumber }) {
     const result = await this.User.update(
       { name, email, phoneNumber },
@@ -91,6 +114,16 @@ class UsersService {
 
     if (!result) {
       throw new NotFoundError('User not found');
+    }
+  }
+
+  async verifyOldPassword(id, oldPassword) {
+    const user = await this.User.findOne({ where: { id } });
+
+    const isPasswordMatch = await bcrypt.compare(oldPassword, user.password);
+
+    if (!isPasswordMatch) {
+      throw new ClientError('Old password is incorrect');
     }
   }
 
