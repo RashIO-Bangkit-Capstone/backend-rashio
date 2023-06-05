@@ -50,7 +50,7 @@ class UsersService {
     const user = await this.User.findOne({ where: { email } });
 
     if (!user) {
-      throw new NotFoundError('email or password is incorrect');
+      throw new NotFoundError('Email or password is incorrect');
     }
 
     const isPasswordMatch = await bcrypt.compare(password, user.password);
