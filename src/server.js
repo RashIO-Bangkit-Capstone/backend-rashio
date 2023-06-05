@@ -52,13 +52,18 @@ const init = async () => {
         origin: ['*'],
       },
     },
+    
   });
+
+  server.realm.modifiers.route.prefix = process.env.BASE_PATH;
 
   const swaggerOptions = {
     info: {
       title: 'RashIO API Documentation',
       version: Pack.version,
     },
+    basePath: process.env.BASE_PATH,
+    pathPrefixSize: 2,
     schemes: process.env.NODE_ENV === 'production' ? ['https'] : ['http'],
   };
 
