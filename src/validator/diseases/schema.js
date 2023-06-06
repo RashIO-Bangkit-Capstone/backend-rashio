@@ -3,31 +3,32 @@ const Joi = require('joi');
 module.exports = {
   PostDiseasesPayloadSchema: Joi.object({
     name: Joi.string().required().messages({
-      'any.required': 'name is required',
+      'any.required': 'Name is required',
+      'string.base': 'Name must be a string',
     }),
 
     descriptions: Joi.array()
       .items(
         Joi.string().messages({
-          'string.base': 'descriptions must be a string',
+          'string.base': 'Descriptions must be a string',
         })
       )
       .required()
       .messages({
-        'any.required': 'descriptions is required',
-        'array.base': 'descriptions must be an array',
+        'any.required': 'Descriptions is required',
+        'array.base': 'Descriptions must be an array',
       }),
 
     treatments: Joi.array()
       .items(
         Joi.string().messages({
-          'string.base': 'treatments must be a string',
+          'string.base': 'Treatments must be a string',
         })
       )
       .required()
       .messages({
-        'any.required': 'treatments is required',
-        'array.base': 'treatments must be an array',
+        'any.required': 'Treatments is required',
+        'array.base': 'Treatments must be an array',
       }),
   }).label('PostDiseasesPayloadSchema'),
 
@@ -73,26 +74,26 @@ module.exports = {
     descriptions: Joi.array()
       .items(
         Joi.string().messages({
-          'string.base': 'descriptions must be a string',
+          'string.base': 'Descriptions must be a string',
         })
       )
       .required()
       .messages({
-        'any.required': 'descriptions is required',
-        'array.base': 'descriptions must be an array',
+        'any.required': 'Descriptions is required',
+        'array.base': 'Descriptions must be an array',
       }),
 
     treatments: Joi.array()
 
       .items(
         Joi.string().messages({
-          'string.base': 'treatments must be a string',
+          'string.base': 'Treatments must be a string',
         })
       )
       .required()
       .messages({
-        'any.required': 'treatments is required',
-        'array.base': 'treatments must be an array',
+        'any.required': 'Treatments is required',
+        'array.base': 'Treatments must be an array',
       }),
   }).label('PutDiseasesPayloadSchema'),
 

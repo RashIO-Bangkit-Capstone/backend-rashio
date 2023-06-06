@@ -10,7 +10,9 @@ const PostPredictionImageHeaderSchema = Joi.object({
       'image/png',
       'image/webp'
     )
-    .required(),
+    .required().messages({
+      'any.only': 'Image must valid image type',
+    }),
   'content-disposition': Joi.string(),
 });
 
@@ -19,7 +21,9 @@ const AuthorizationHeaderSchema = Joi.object({
 }).label('Authorization Header');
 
 const PostPredictionPayloadSchema = Joi.object({
-  image: Joi.any().meta({ swaggerType: 'file' }).required(),
+  image: Joi.any().meta({ swaggerType: 'file' }).required().messages({
+    'any.required': 'Image is required',
+  }),
 }).label('Post Prediction Payload');
 
 const ResponsePostPredictionSchema = Joi.object({

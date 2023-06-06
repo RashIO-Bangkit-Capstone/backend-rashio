@@ -1,5 +1,6 @@
 const InvariantError = require('../../exceptions/InvariantError');
 const ServerError = require('../../exceptions/ServerError');
+const NotFoundError = require('../../exceptions/NotFoundError');
 
 const {
   Disease,
@@ -13,7 +14,7 @@ class DiseasesService {
     const disease = await Disease.findOne({ where: { name } });
 
     if (disease) {
-      throw new InvariantError('disease name already used');
+      throw new InvariantError('Disease name already used');
     }
   }
 
@@ -50,7 +51,7 @@ class DiseasesService {
       return disease;
     } catch (error) {
       await t.rollback();
-      throw new ServerError('internal server error');
+      throw new ServerError('Internal server error');
     }
   }
 
@@ -93,7 +94,7 @@ class DiseasesService {
     const disease = await Disease.findOne({ where: { name } });
 
     if (!disease) {
-      throw new InvariantError('disease not found');
+      throw new NotFoundError('Disease not found');
     }
   }
 
@@ -142,7 +143,7 @@ class DiseasesService {
     } catch (error) {
       // rollback transaction
       await t.rollback();
-      throw new ServerError('internal server error');
+      throw new ServerError('Internal server error');
     }
   }
 
@@ -176,7 +177,7 @@ class DiseasesService {
     } catch (error) {
       // rollback transaction
       await t.rollback();
-      throw new ServerError('internal server error');
+      throw new ServerError('Internal server error');
     }
   }
 }

@@ -19,7 +19,7 @@ class DiseasesHandler {
     const response = h.response({
       status: 'success',
       code: 201,
-      message: 'disease added successfully',
+      message: 'Disease added successfully',
       data: {
         id: disease.id,
         name: disease.name,
@@ -37,7 +37,7 @@ class DiseasesHandler {
     return {
       status: 'success',
       code: 200,
-      message: 'diseases retrieved successfully',
+      message: 'Diseases retrieved successfully',
       data: diseases,
     };
   }
@@ -51,7 +51,7 @@ class DiseasesHandler {
     return h.response({
       status: 'success',
       code: 200,
-      message: 'disease retrieved successfully',
+      message: 'Disease retrieved successfully',
       data: disease,
     });
   }
@@ -68,7 +68,7 @@ class DiseasesHandler {
     const response = h.response({
       status: 'success',
       code: 201,
-      message: 'disease updated successfully',
+      message: 'Disease updated successfully',
     });
 
     response.code(201);
@@ -85,7 +85,7 @@ class DiseasesHandler {
     return h.response({
       status: 'success',
       code: 200,
-      message: 'disease deleted successfully',
+      message: 'Disease deleted successfully',
     });
   }
 }
