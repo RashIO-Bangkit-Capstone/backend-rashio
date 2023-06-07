@@ -10,6 +10,10 @@ const config = require('../config/config')[env];
 const db = {};
 const User = require('./user');
 const Authentication = require('./authentication');
+const Predictionlog = require('./predictionlog');
+const Disease = require('./disease');
+const DiseaseDescription = require('./diseasedescription');
+const DiseaseTreatment = require('./diseasetreatment');
 
 let sequelize;
 if (config.use_env_variable) {
@@ -52,5 +56,9 @@ db.Sequelize = Sequelize;
 // define models
 db.User = User(sequelize, Sequelize);
 db.Authentication = Authentication(sequelize, Sequelize);
+db.Predictionlog = Predictionlog(sequelize, Sequelize);
+db.Disease = Disease(sequelize, Sequelize);
+db.DiseaseDescription = DiseaseDescription(sequelize, Sequelize);
+db.DiseaseTreatment = DiseaseTreatment(sequelize, Sequelize);
 
 module.exports = db;

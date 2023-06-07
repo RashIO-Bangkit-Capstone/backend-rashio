@@ -17,6 +17,15 @@ const authentications = require('./api/authentications');
 const AuthenticationsService = require('./services/database/AuthenticationsService');
 const AuthenticationsValidator = require('./validator/authentications');
 const tokenManager = require('./tokenize/TokenManager');
+// module api prediction
+const predictions = require('./api/predictions');
+const BucketService = require('./services/storage/BucketService');
+const PredictionLogsService = require('./services/database/PredictionLogsService');
+const PredictionsValidator = require('./validator/predictions');
+// module api diseases
+const diseases = require('./api/diseases');
+const DiseasesService = require('./services/database/DiseasesService');
+const DiseasesValidator = require('./validator/diseases');
 
 dotenv.config();
 
@@ -27,6 +36,13 @@ const init = async () => {
   // create instance of AUTHENTICATION service and token manager
   const authenticationsService = new AuthenticationsService();
   const authenticationsValidator = new AuthenticationsValidator();
+  // create instance of prediction service and validator
+  const bucketService = new BucketService();
+  const predictionLogsService = new PredictionLogsService();
+  const predictionsValidator = new PredictionsValidator();
+  // create instance of diseases service and validator
+  const diseasesService = new DiseasesService();
+  const diseasesValidator = new DiseasesValidator();
 
   const server = Hapi.server({
     port: process.env.PORT || 5000,
@@ -36,13 +52,19 @@ const init = async () => {
         origin: ['*'],
       },
     },
+    
   });
+
+  server.realm.modifiers.route.prefix = process.env.BASE_PATH;
 
   const swaggerOptions = {
     info: {
       title: 'RashIO API Documentation',
       version: Pack.version,
     },
+    basePath: process.env.BASE_PATH,
+    pathPrefixSize: 2,
+    schemes: process.env.NODE_ENV === 'production' ? ['https'] : ['http'],
   };
 
   // register plugin
@@ -94,6 +116,21 @@ const init = async () => {
         usersService,
         tokenManager,
         validator: authenticationsValidator,
+      },
+    },
+    {
+      plugin: predictions,
+      options: {
+        bucketService,
+        predictionLogsService,
+        validator: predictionsValidator,
+      },
+    },
+    {
+      plugin: diseases,
+      options: {
+        service: diseasesService,
+        validator: diseasesValidator,
       },
     },
     {

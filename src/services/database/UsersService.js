@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const { User } = require('../../../db/models');
 
 const InvariantError = require('../../exceptions/InvariantError');
+const ClientError = require('../../exceptions/ClientError');
 const NotFoundError = require('../../exceptions/NotFoundError');
 const AuthorizationError = require('../../exceptions/AuthorizationError');
 
@@ -15,11 +16,19 @@ class UsersService {
     const user = await this.User.findOne({ where: { email } });
 
     if (user) {
-      throw new InvariantError('email already used');
+      throw new InvariantError('Email already used');
     }
   }
 
-  async addUser({ name, email, password }) {
+  async checkPhoneNumberAvailable(phoneNumber) {
+    const user = await this.User.findOne({ where: { phoneNumber } });
+
+    if (user) {
+      throw new InvariantError('Phone number already used');
+    }
+  }
+
+  async addUser({ name, email, password, phoneNumber }) {
     const id = `user-${nanoid()}`;
     const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -28,6 +37,7 @@ class UsersService {
       name,
       email,
       password: hashedPassword,
+      phoneNumber,
     });
 
     if (!result) {
@@ -41,7 +51,7 @@ class UsersService {
     const user = await this.User.findOne({ where: { email } });
 
     if (!user) {
-      throw new NotFoundError('email or password is incorrect');
+      throw new NotFoundError('Email or password is incorrect');
     }
 
     const isPasswordMatch = await bcrypt.compare(password, user.password);
@@ -74,11 +84,46 @@ class UsersService {
     return user;
   }
 
-  async editUserById(id, { name, email }) {
-    const result = await this.User.update({ name, email }, { where: { id } });
+  async checkEmailChanged(id, email){
+    const user = await this.User.findOne({ where: { id } });
+
+    if (user.email === email) {
+      // email not changed
+      return;
+    }
+
+    await this.checkEmailAvailable(email);
+  }
+
+  async checkPhoneNumberChanged(id, phoneNumber){
+    const user = await this.User.findOne({ where: { id } });
+
+    if (user.phoneNumber === phoneNumber) {
+      // phoneNumber not changed
+      return;
+    }
+
+    await this.checkPhoneNumberAvailable(phoneNumber);
+  }
+
+  async editUserById(id, { name, email, phoneNumber }) {
+    const result = await this.User.update(
+      { name, email, phoneNumber },
+      { where: { id } }
+    );
 
     if (!result) {
       throw new NotFoundError('User not found');
+    }
+  }
+
+  async verifyOldPassword(id, oldPassword) {
+    const user = await this.User.findOne({ where: { id } });
+
+    const isPasswordMatch = await bcrypt.compare(oldPassword, user.password);
+
+    if (!isPasswordMatch) {
+      throw new ClientError('Old password is incorrect');
     }
   }
 

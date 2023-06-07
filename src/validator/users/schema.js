@@ -2,19 +2,29 @@ const Joi = require('joi');
 
 const PostUserPayloadSchema = Joi.object({
   name: Joi.string().required().messages({
-    'any.required': 'name is required',
+    'any.required': 'Name is required',
   }),
   email: Joi.string().email().required().messages({
-    'any.required': 'email is required',
-    'string.email': 'email must be a valid email',
+    'any.required': 'Email is required',
+    'string.email': 'Email must be a valid email',
   }),
+  phoneNumber: Joi.string()
+    .regex(/^0\d{8,15}$/)
+    .max(15)
+    .required()
+    .messages({
+      'any.required': 'Phone number is required',
+      'string.max':
+        'Phone number length must be less than or equal to 15 characters long',
+      'string.pattern.base': 'Phone number must be a valid phone number',
+    }),
   password: Joi.string().min(8).required().messages({
-    'any.required': 'password is required',
-    'string.min': 'password must be at least 8 characters',
+    'any.required': 'Password is required',
+    'string.min': 'Password must be at least 8 characters',
   }),
   confirmPassword: Joi.string().min(8).required().messages({
-    'any.required': 'confirm password is required',
-    'string.min': 'confirm password must be at least 8 characters',
+    'any.required': 'Confirm password is required',
+    'string.min': 'Confirm password must be at least 8 characters',
   }),
 }).label('Post User Payload');
 
@@ -42,30 +52,41 @@ const ResponseGetUserSchema = Joi.object({
   data: Joi.object({
     name: Joi.string(),
     email: Joi.string(),
+    phoneNumber: Joi.string(),
   }).label('Response Get User Data'),
 }).label('Response Get User');
 
 const PutUserPayloadSchema = Joi.object({
   name: Joi.string().required().messages({
-    'any.required': 'name is required',
+    'any.required': 'Name is required',
   }),
   email: Joi.string().email().required().messages({
-    'any.required': 'email is required',
-    'string.email': 'email must be a valid email',
+    'any.required': 'Email is required',
+    'string.email': 'Email must be a valid email',
   }),
+  phoneNumber: Joi.string()
+    .regex(/^0\d{8,15}$/)
+    .max(15)
+    .required()
+    .messages({
+      'any.required': 'Phone number is required',
+      'string.max':
+        'Phone number length must be less than or equal to 15 characters long',
+      'string.pattern.base': 'Phone number must be a valid phone number',
+    }),
 }).label('Put User Payload');
 
 const PutUserPasswordPayloadSchema = Joi.object({
   oldPassword: Joi.string().required().messages({
-    'any.required': 'old password is required',
+    'any.required': 'Old password is required',
   }),
   newPassword: Joi.string().min(8).required().messages({
-    'any.required': 'new password is required',
-    'string.min': 'new password must be at least 8 characters',
+    'any.required': 'New password is required',
+    'string.min': 'New password must be at least 8 characters',
   }),
   confirmPassword: Joi.string().min(8).required().messages({
-    'any.required': 'confirm password is required',
-    'string.min': 'confirm password must be at least 8 characters',
+    'any.required': 'Confirm password is required',
+    'string.min': 'Confirm password must be at least 8 characters',
   }),
 }).label('Put User Password Payload');
 
