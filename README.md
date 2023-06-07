@@ -2,7 +2,8 @@
 
 ## Documentation
 
-http://34.128.112.254/documentation
+- prod: https://www.rashio.software/api/documentation
+- beta: https://www.rashio.software/beta/documentation
 
 ## Endpoints
 
@@ -26,6 +27,12 @@ http://34.128.112.254/documentation
 | GET    | /diseases/{nameDiseases} | Get disease description            |
 | POST   | /diseases                | Create a disease description       |
 | PUT    | /diseases/{nameDiseases} | Update a disease description       |
+| DELETE | /diseases/{nameDiseases} | Delete a disease description       |
+| --     | --                       | --                                 |
+| POST   | /articles                | Create an article                  |
+| GET    | /articles/{id}           | Get an article                     |
+| PUT    | /articles/{id}           | Update an article                  |
+| DELETE | /articles/{id}           | Delete an article                  |
 
 ## Checklist
 
@@ -40,13 +47,28 @@ http://34.128.112.254/documentation
 - [x] PUT /authentications
 - [x] DELETE /authentications
 - [x] POST /predictions
-- [ ] GET /predictions/{userId}
-- [ ] GET /diseases/{nameDiseases}
-- [ ] POST /diseases
-- [ ] PUT /diseases/{nameDiseases}
+- [x] GET /predictions/{userId}
+- [x] POST /diseases
+- [x] GET /diseases/{nameDiseases}
+- [x] PUT /diseases/{nameDiseases}
+- [x] DELETE /diseases/{nameDiseases}
+- [ ] POST /articles
+- [ ] GET /articles/{id}
+- [ ] PUT /articles/{id}
+- [ ] DELETE /articles/{id}
 
 ### Deployment
 
+- [x] Integrate with Google Cloud Storage Bucket
 - [x] Deploy dev API in GCP
 - [ ] Deploy prod API in GCP
 - [ ] Deploy ML model in GCP
+
+
+### Postman Testing
+
+- [x] Feature Users
+- [x] Feature Authentications
+- [x] Feature Predictions
+- [x] Feature Diseases
+- [ ] Feature Articles
