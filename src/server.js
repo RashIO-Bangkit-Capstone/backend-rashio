@@ -26,6 +26,10 @@ const PredictionsValidator = require('./validator/predictions');
 const diseases = require('./api/diseases');
 const DiseasesService = require('./services/database/DiseasesService');
 const DiseasesValidator = require('./validator/diseases');
+// module api articles
+const articles = require('./api/articles');
+const ArticlesService = require('./services/database/ArticlesService');
+const ArticlesValidator = require('./validator/articles');
 
 dotenv.config();
 
@@ -43,6 +47,9 @@ const init = async () => {
   // create instance of diseases service and validator
   const diseasesService = new DiseasesService();
   const diseasesValidator = new DiseasesValidator();
+  // create instance of articles service and validator
+  const articlesService = new ArticlesService();
+  const articlesValidator = new ArticlesValidator();
 
   const server = Hapi.server({
     port: process.env.PORT || 5000,
@@ -131,6 +138,14 @@ const init = async () => {
       options: {
         service: diseasesService,
         validator: diseasesValidator,
+      },
+    },
+    {
+      plugin: articles,
+      options: {
+        articlesService,
+        bucketService,
+        validator: articlesValidator,
       },
     },
     {
