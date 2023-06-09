@@ -5,6 +5,7 @@ module.exports = {
     title: Joi.string().required(),
     referenceUrl: Joi.string().required(),
     bodies: Joi.array().items(Joi.string()).required(),
+    author: Joi.string().required(),
   }),
 
   PutArticleImageHeaderSchema : Joi.object({
@@ -20,8 +21,7 @@ module.exports = {
       .required().messages({
         'any.only': 'Image must valid image type',
       }),
-    'content-disposition': Joi.string(),
-  }),
+  }).unknown(true),
 
   PutArticleImagePayloadSchema : Joi.object({
     image: Joi.any().meta({ swaggerType: 'file' }).required().messages({
@@ -33,6 +33,7 @@ module.exports = {
     title: Joi.string().required(),
     referenceUrl: Joi.string().required(),
     bodies: Joi.array().items(Joi.string()).required(),
+    author: Joi.string().required(),
   }),
 
   ResponsePostArticleSchema: Joi.object({
@@ -53,6 +54,7 @@ module.exports = {
       title: Joi.string().required(),
       referenceUrl: Joi.string().required(),
       imageUrl: Joi.string().required(),
+      author: Joi.string().required(),
     })),
   }),
 
@@ -69,6 +71,7 @@ module.exports = {
       title: Joi.string().required(),
       referenceUrl: Joi.string().required(),
       imageUrl: Joi.string().required(),
+      author: Joi.string().required(),
       bodies: Joi.array().items(Joi.string()).required(),
     }),
   }),

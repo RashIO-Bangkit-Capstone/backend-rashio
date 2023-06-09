@@ -18,7 +18,7 @@ class ArticlesHandler {
     return h.response({
       status: 'success',
       code: 201,
-      message: 'success add article',
+      message: 'Success add article',
       data: {
         articleId: article.id,
       }
@@ -32,7 +32,7 @@ class ArticlesHandler {
     return h.response({
       status: 'success',
       code: 200,
-      message: 'success get articles',
+      message: 'Success get articles',
       data: articles,
     });
   }
@@ -46,7 +46,7 @@ class ArticlesHandler {
     return h.response({
       status: 'success',
       code: 200,
-      message: 'success get article by id',
+      message: 'Success get article',
       data: article,
     });
   }
