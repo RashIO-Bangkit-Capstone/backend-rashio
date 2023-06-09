@@ -13,8 +13,7 @@ const PostPredictionImageHeaderSchema = Joi.object({
     .required().messages({
       'any.only': 'Image must valid image type',
     }),
-  'content-disposition': Joi.string(),
-});
+}).unknown(true);
 
 const AuthorizationHeaderSchema = Joi.object({
   authorization: Joi.string().required().default('Bearer '),
