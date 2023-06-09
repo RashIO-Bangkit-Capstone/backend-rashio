@@ -3315,14 +3315,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9000/api/articles",
-							"protocol": "http",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles",
+							"protocol": "{{protocol}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9000",
+							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"articles"
 							]
 						}
@@ -3373,14 +3373,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9000/api/articles",
-							"protocol": "http",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles",
+							"protocol": "{{protocol}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9000",
+							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"articles"
 							]
 						}
@@ -3431,14 +3431,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9000/api/articles",
-							"protocol": "http",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles",
+							"protocol": "{{protocol}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9000",
+							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"articles"
 							]
 						}
@@ -3684,14 +3684,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/articles",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"articles"
 							]
 						}
@@ -3742,14 +3742,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/articles/{{articleId}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/{{articleId}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"articles",
 								"{{articleId}}"
 							]
@@ -3793,14 +3793,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/articles/gkada",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/gkada",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"articles",
 								"gkada"
 							]
@@ -3853,14 +3853,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9000/api/articles/{{articleId}}",
-							"protocol": "http",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/{{articleId}}",
+							"protocol": "{{protocol}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9000",
+							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"articles",
 								"{{articleId}}"
 							]
@@ -3912,14 +3912,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9000/api/articles/{{articleId}}",
-							"protocol": "http",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/{{articleId}}",
+							"protocol": "{{protocol}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9000",
+							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"articles",
 								"{{articleId}}"
 							]
@@ -3973,14 +3973,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/articles/{{articleId}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/{{articleId}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"articles",
 								"{{articleId}}"
 							]
@@ -4024,14 +4024,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9000/api/articles/{{articleId}}",
-							"protocol": "http",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/{{articleId}}",
+							"protocol": "{{protocol}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9000",
+							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"articles",
 								"{{articleId}}"
 							]
@@ -4075,14 +4075,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9000/api/articles/{{articleId}}",
-							"protocol": "http",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/{{articleId}}",
+							"protocol": "{{protocol}}",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "9000",
+							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"articles",
 								"{{articleId}}"
 							]
