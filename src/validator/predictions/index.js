@@ -7,6 +7,16 @@ class PredictionsValidator {
     this.schema = schema;
   }
 
+  validatePostPredictionPayload(payload) {
+    const { PostPredictionPayloadSchema } = this.schema;
+
+    const validationResult = PostPredictionPayloadSchema.validate(payload);
+
+    if (validationResult.error) {
+      throw new InvariantError(validationResult.error.message);
+    }
+  }
+
   validatePostPredictionHeader(headers) {
     const { PostPredictionImageHeaderSchema } = this.schema;
 

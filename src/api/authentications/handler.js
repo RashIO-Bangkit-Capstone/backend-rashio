@@ -60,7 +60,7 @@ class AuthenticationsHandler {
     return h.response({
       status: 'success',
       code: 200,
-      message: 'Access has been refreshed',
+      message: 'Access token has been refreshed',
       data: {
         accessToken,
       },

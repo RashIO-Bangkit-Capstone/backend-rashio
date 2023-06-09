@@ -40,6 +40,7 @@ class UserHandler {
     const response = h.response({
       status: 'success',
       code: 200,
+      message: 'Get user success',
       data: {
         name: user.name,
         email: user.email,
@@ -56,6 +57,8 @@ class UserHandler {
     const { payload } = request;
 
     this.Validator.validatePutUserPayload(payload);
+    await this.Service.checkEmailChanged(id, payload.email);
+    await this.Service.checkPhoneNumberChanged(id, payload.phoneNumber);
     this.Service.verifyUserAccess(id, credentialId);
 
     await this.Service.editUserById(id, payload);
@@ -79,6 +82,7 @@ class UserHandler {
 
     this.Validator.validatePutUserPasswordPayload(payload);
     this.Service.verifyUserAccess(id, credentialId);
+    await this.Service.verifyOldPassword(id, payload.oldPassword);
     await this.Service.editUserPasswordById(id, payload.newPassword);
 
     const response = h.response({
