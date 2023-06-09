@@ -2,11 +2,11 @@ const Joi = require('joi');
 
 const PostAuthenticationPayloadSchema = Joi.object({
   email: Joi.string().email().required().messages({
-    'any.required': 'email is required',
-    'string.email': 'email must be a valid email',
+    'any.required': 'Email is required',
+    'string.email': 'Email must be a valid email',
   }),
   password: Joi.string().required().messages({
-    'any.required': 'password is required',
+    'any.required': 'Password is required',
   }),
 }).label('Post Authentication Payload');
 
@@ -22,7 +22,8 @@ const ResponsePostAuthenticationSchema = Joi.object({
 
 const PutAuthenticationPayloadSchema = Joi.object({
   refreshToken: Joi.string().required().messages({
-    'any.required': 'refreshToken is required',
+    'any.required': 'RefreshToken is required',
+    'string.base': 'RefreshToken must be a string'
   }),
 }).label('Put & Delete Authentication Payload');
 

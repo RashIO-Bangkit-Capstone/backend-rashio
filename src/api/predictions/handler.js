@@ -11,12 +11,13 @@ class PredictionsHandler {
 
   async postPredictionHandler(request, h) {
     const { id: userId } = request.auth.credentials;
-
+    
+    this.Validator.validatePostPredictionPayload(request.payload);
+    
     const { image } = request.payload;
-
     this.Validator.validatePostPredictionHeader(image.hapi.headers);
 
-    const imageLocation = await this.BucketService.uploadImage(image);
+    const imageLocation = await this.BucketService.uploadImagePrediction(image);
 
     // TODO: call python script here
 
@@ -54,6 +55,7 @@ class PredictionsHandler {
 
     const response = h.response({
       status: 'success',
+      message: 'Prediction logs successfully retrieved',
       code: 200,
       data: {
         predictionLogs,
