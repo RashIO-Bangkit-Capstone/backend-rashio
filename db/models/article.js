@@ -19,7 +19,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
       type: DataTypes.STRING,
     },
-    referenceUrl: DataTypes.STRING  
+    referenceUrl: DataTypes.STRING,
+    author: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Article',
