@@ -52,10 +52,11 @@
 - [x] GET /diseases/{nameDiseases}
 - [x] PUT /diseases/{nameDiseases}
 - [x] DELETE /diseases/{nameDiseases}
-- [ ] POST /articles
-- [ ] GET /articles/{id}
-- [ ] PUT /articles/{id}
-- [ ] DELETE /articles/{id}
+- [x] POST /articles
+- [x] GET /articles/{id}
+- [x] PUT /articles/{id}
+- [x] PUT /articles/{id}/image
+- [x] DELETE /articles/{id}
 
 ### Deployment
 
@@ -71,4 +72,4 @@
 - [x] Feature Authentications
 - [x] Feature Predictions
 - [x] Feature Diseases
-- [ ] Feature Articles
+- [x] Feature Articles
