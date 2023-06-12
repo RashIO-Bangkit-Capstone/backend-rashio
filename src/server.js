@@ -93,6 +93,7 @@ const init = async () => {
         id: artifacts.decoded.payload.id,
         name: artifacts.decoded.payload.name,
         email: artifacts.decoded.payload.email,
+        phoneNumber: artifacts.decoded.payload.phoneNumber,
       },
     }),
   });
