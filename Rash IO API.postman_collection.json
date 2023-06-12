@@ -44,14 +44,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api"
+								"{{prefixPath}}"
 							]
 						}
 					},
@@ -125,14 +125,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users"
 							]
 						}
@@ -193,14 +193,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users"
 							]
 						}
@@ -261,14 +261,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users"
 							]
 						}
@@ -329,14 +329,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users"
 							]
 						}
@@ -397,14 +397,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users"
 							]
 						}
@@ -465,14 +465,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users"
 							]
 						}
@@ -529,14 +529,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/authentications",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/authentications",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"authentications"
 							]
 						}
@@ -596,14 +596,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/authentications",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/authentications",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"authentications"
 							]
 						}
@@ -655,14 +655,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/authentications",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/authentications",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"authentications"
 							]
 						}
@@ -722,14 +722,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/authentications",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/authentications",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"authentications"
 							]
 						}
@@ -789,14 +789,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/authentications",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/authentications",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"authentications"
 							]
 						}
@@ -851,14 +851,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/authentications",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/authentications",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"authentications"
 							]
 						}
@@ -913,14 +913,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/authentications",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/authentications",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"authentications"
 							]
 						}
@@ -975,14 +975,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/authentications",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/authentications",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"authentications"
 							]
 						}
@@ -1037,14 +1037,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/authentications",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/authentications",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"authentications"
 							]
 						}
@@ -1088,14 +1088,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/authentications",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/authentications",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"authentications"
 							]
 						}
@@ -1155,14 +1155,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users/{{userId}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users/{{userId}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users",
 								"{{userId}}"
 							]
@@ -1216,14 +1216,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users/userid",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users/userid",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users",
 								"userid"
 							]
@@ -1276,14 +1276,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users/{{userId}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users/{{userId}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users",
 								"{{userId}}"
 							]
@@ -1329,14 +1329,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users/{{userId}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users/{{userId}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users",
 								"{{userId}}"
 							]
@@ -1362,14 +1362,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users"
 							]
 						}
@@ -1431,14 +1431,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users/{{userId}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users/{{userId}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users",
 								"{{userId}}"
 							]
@@ -1501,14 +1501,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users/{{userId}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users/{{userId}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users",
 								"{{userId}}"
 							]
@@ -1576,14 +1576,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users/{{userId}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users/{{userId}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users",
 								"{{userId}}"
 							]
@@ -1638,14 +1638,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users/{{userId}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users/{{userId}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users",
 								"{{userId}}"
 							]
@@ -1708,14 +1708,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users/{{userId}}/password",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users/{{userId}}/password",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users",
 								"{{userId}}",
 								"password"
@@ -1779,14 +1779,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users/{{userId}}/password",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users/{{userId}}/password",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users",
 								"{{userId}}",
 								"password"
@@ -1853,14 +1853,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/users/{{userId}}/password",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/users/{{userId}}/password",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"users",
 								"{{userId}}",
 								"password"
@@ -1898,14 +1898,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/authentications",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/authentications",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"authentications"
 							]
 						}
@@ -1965,14 +1965,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/authentications",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/authentications",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"authentications"
 							]
 						}
@@ -2045,14 +2045,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/predictions",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/predictions",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"predictions"
 							]
 						}
@@ -2115,14 +2115,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/predictions",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/predictions",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"predictions"
 							]
 						}
@@ -2185,14 +2185,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/predictions",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/predictions",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"predictions"
 							]
 						}
@@ -2255,14 +2255,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/predictions/{{userId}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/predictions/{{userId}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"predictions",
 								"{{userId}}"
 							]
@@ -2316,14 +2316,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/predictions/user123",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/predictions/user123",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"predictions",
 								"user123"
 							]
@@ -2376,14 +2376,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/predictions/{{userId}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/predictions/{{userId}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"predictions",
 								"{{userId}}"
 							]
@@ -2457,14 +2457,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/diseases",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"diseases"
 							]
 						}
@@ -2526,14 +2526,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/diseases",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"diseases"
 							]
 						}
@@ -2595,14 +2595,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/diseases",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"diseases"
 							]
 						}
@@ -2663,14 +2663,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/diseases",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"diseases"
 							]
 						}
@@ -2716,14 +2716,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/diseases",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"diseases"
 							]
 						}
@@ -2773,14 +2773,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/diseases/disease{{diseaseIndex}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/disease{{diseaseIndex}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"diseases",
 								"disease{{diseaseIndex}}"
 							]
@@ -2824,14 +2824,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/diseases/notfound",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/notfound",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"diseases",
 								"notfound"
 							]
@@ -2893,14 +2893,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/diseases/disease{{diseaseIndex}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/disease{{diseaseIndex}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"diseases",
 								"disease{{diseaseIndex}}"
 							]
@@ -2962,14 +2962,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/diseases/disease{{diseaseIndex}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/disease{{diseaseIndex}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"diseases",
 								"disease{{diseaseIndex}}"
 							]
@@ -3031,14 +3031,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/diseases/notfound",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/notfound",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"diseases",
 								"notfound"
 							]
@@ -3091,14 +3091,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/diseases/disease{{diseaseIndex}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/disease{{diseaseIndex}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"diseases",
 								"disease{{diseaseIndex}}"
 							]
@@ -3142,14 +3142,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/diseases/disease{{diseaseIndex}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/disease{{diseaseIndex}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"diseases",
 								"disease{{diseaseIndex}}"
 							]
@@ -3193,14 +3193,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/diseases/notfound",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/notfound",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"diseases",
 								"notfound"
 							]
@@ -3244,16 +3244,847 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/diseases/disease{{diseaseIndex}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/disease{{diseaseIndex}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
 							],
 							"port": "{{port}}",
 							"path": [
-								"api",
+								"{{prefixPath}}",
 								"diseases",
 								"disease{{diseaseIndex}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Articles",
+			"item": [
+				{
+					"name": "Add New Article With Valid Payload",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('it should response 201 status code', () => {\r",
+									"    pm.expect(pm.response).to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test('it should response Content-Type header should have application/json value', () => {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.includes('application/json');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should an object', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.an('object');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should have correct property and value', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseJson.status).to.equal('success');\r",
+									"    pm.expect(responseJson.code).to.equal(201);\r",
+									"    pm.expect(responseJson.message).to.equal('Success add article');\r",
+									"    pm.expect(responseJson.data).to.be.an('object');\r",
+									"    pm.expect(responseJson.data).to.be.haveOwnPropertyDescriptor('articleId', 'number');\r",
+									"\r",
+									"    const articleId = responseJson.data.articleId;\r",
+									"\r",
+									"    pm.environment.set('articleId', articleId);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"Judul\",\r\n    \"referenceUrl\" : \"www.com\",\r\n    \"author\": \"Dr. Aiyman\",\r\n    \"bodies\": [\r\n        \"paragraf 1\",\r\n        \"paragraf 2\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{prefixPath}}",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Article With Invalid Payload",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('it should response 400 status code', () => {\r",
+									"    pm.expect(pm.response).to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test('it should response Content-Type header should have application/json value', () => {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.includes('application/json');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should an object', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.an('object');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should have correct property and value', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseJson.status).to.equal('fail');\r",
+									"    pm.expect(responseJson.code).to.equal(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"Judul\",\r\n    \"referenceUrl\" : \"www.com\",\r\n    \"bodies\": [\r\n        \"paragraf 1\",\r\n        \"paragraf 2\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{prefixPath}}",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Article With String Bodies Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('it should response 400 status code', () => {\r",
+									"    pm.expect(pm.response).to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test('it should response Content-Type header should have application/json value', () => {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.includes('application/json');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should an object', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.an('object');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should have correct property and value', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseJson.status).to.equal('fail');\r",
+									"    pm.expect(responseJson.code).to.equal(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"Judul\",\r\n    \"referenceUrl\" : \"www.com\",\r\n    \"author\": \"Dr. Aiyman\",\r\n    \"bodies\": \"paragraf 1 paragraf 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{prefixPath}}",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Article Image With Valid Payload",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('it should response 201 status code', () => {\r",
+									"    pm.expect(pm.response).to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test('it should response Content-Type header should have application/json value', () => {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.includes('application/json');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should an object', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.an('object');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should have correct property and value', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseJson.status).to.equal('success');\r",
+									"    pm.expect(responseJson.code).to.equal(201);\r",
+									"    pm.expect(responseJson.message).to.equal('Success update article image');\r",
+									"    pm.expect(responseJson.data).to.be.an('object');\r",
+									"    pm.expect(responseJson.data).to.be.haveOwnPropertyDescriptor('imageUrl', 'string')\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/nakro/OneDrive/Gambar/5eae34a7dd090.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/{{articleId}}/image",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{prefixPath}}",
+								"articles",
+								"{{articleId}}",
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Article Image With Invalid File Type",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('it should response 400 status code', () => {\r",
+									"    pm.expect(pm.response).to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test('it should response Content-Type header should have application/json value', () => {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.includes('application/json');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should an object', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.an('object');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should have correct property and value', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseJson.status).to.equal('fail');\r",
+									"    pm.expect(responseJson.code).to.equal(400);\r",
+									"    pm.expect(responseJson.message).to.equal('Image must valid image type');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/nakro/OneDrive/Dokumen/insyallah judul.txt"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/{{articleId}}/image",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{prefixPath}}",
+								"articles",
+								"{{articleId}}",
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Article Image With Invalid Payload",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('it should response 400 status code', () => {\r",
+									"    pm.expect(pm.response).to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test('it should response Content-Type header should have application/json value', () => {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.includes('application/json');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should an object', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.an('object');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should have correct property and value', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseJson.status).to.equal('fail');\r",
+									"    pm.expect(responseJson.code).to.equal(400);\r",
+									"    pm.expect(responseJson.message).to.equal('Image is required');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "gambar",
+									"type": "file",
+									"src": "/C:/Users/nakro/OneDrive/Dokumen/insyallah judul.txt"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/{{articleId}}/image",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{prefixPath}}",
+								"articles",
+								"{{articleId}}",
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Articles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('it should response 200 status code', () => {\r",
+									"    pm.expect(pm.response).to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test('it should response Content-Type header should have application/json value', () => {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.includes('application/json');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should an object', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.an('object');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should have correct property and value', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseJson.status).to.equal('success');\r",
+									"    pm.expect(responseJson.code).to.equal(200);\r",
+									"    pm.expect(responseJson.message).to.equal('Success get articles');\r",
+									"    pm.expect(responseJson.data).to.be.an('array');\r",
+									"    pm.expect(responseJson.data[0]).to.be.haveOwnPropertyDescriptor('id', 'number');\r",
+									"    pm.expect(responseJson.data[0]).to.be.haveOwnPropertyDescriptor('title', 'string');\r",
+									"    pm.expect(responseJson.data[0]).to.be.haveOwnPropertyDescriptor('referenceUrl', 'string');\r",
+									"    pm.expect(responseJson.data[0]).to.be.haveOwnPropertyDescriptor('imageUrl', 'string');\r",
+									"    pm.expect(responseJson.data[0]).to.be.haveOwnPropertyDescriptor('author', 'string');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{prefixPath}}",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Article By Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('it should response 200 status code', () => {\r",
+									"    pm.expect(pm.response).to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test('it should response Content-Type header should have application/json value', () => {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.includes('application/json');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should an object', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.an('object');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should have correct property and value', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseJson.status).to.equal('success');\r",
+									"    pm.expect(responseJson.code).to.equal(200);\r",
+									"    pm.expect(responseJson.message).to.equal('Success get article');\r",
+									"    pm.expect(responseJson.data).to.be.an('object');\r",
+									"    pm.expect(responseJson.data).to.be.haveOwnPropertyDescriptor('id', 'number');\r",
+									"    pm.expect(responseJson.data).to.be.haveOwnPropertyDescriptor('title', 'string');\r",
+									"    pm.expect(responseJson.data).to.be.haveOwnPropertyDescriptor('referenceUrl', 'string');\r",
+									"    pm.expect(responseJson.data).to.be.haveOwnPropertyDescriptor('imageUrl', 'string');\r",
+									"    pm.expect(responseJson.data).to.be.haveOwnPropertyDescriptor('author', 'string');\r",
+									"    pm.expect(responseJson.data).to.be.haveOwnPropertyDescriptor('createdAt', 'string');\r",
+									"    pm.expect(responseJson.data).to.be.haveOwnPropertyDescriptor('bodies', 'array');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/{{articleId}}",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{prefixPath}}",
+								"articles",
+								"{{articleId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Articel With Not Found Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('it should response 404 status code', () => {\r",
+									"    pm.expect(pm.response).to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test('it should response Content-Type header should have application/json value', () => {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.includes('application/json');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should an object', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.an('object');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should have correct property and value', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseJson.status).to.equal('fail');\r",
+									"    pm.expect(responseJson.code).to.equal(404);\r",
+									"    pm.expect(responseJson.message).to.equal('Article not found');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/gkada",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{prefixPath}}",
+								"articles",
+								"gkada"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Article With Valid Payload",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('it should response 200 status code', () => {\r",
+									"    pm.expect(pm.response).to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test('it should response Content-Type header should have application/json value', () => {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.includes('application/json');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should an object', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.an('object');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should have correct property and value', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseJson.status).to.equal('success');\r",
+									"    pm.expect(responseJson.code).to.equal(200);\r",
+									"    pm.expect(responseJson.message).to.equal('Success update article');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Judul Updated\",\r\n  \"referenceUrl\": \"string\",\r\n  \"bodies\": [\r\n    \"string\"\r\n  ],\r\n  \"author\": \"Doker Ayman\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/{{articleId}}",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{prefixPath}}",
+								"articles",
+								"{{articleId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Article With Valid Invayload Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('it should response 400 status code', () => {\r",
+									"    pm.expect(pm.response).to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test('it should response Content-Type header should have application/json value', () => {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.includes('application/json');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should an object', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.an('object');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should have correct property and value', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseJson.status).to.equal('fail');\r",
+									"    pm.expect(responseJson.code).to.equal(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"referenceUrl\": \"string\",\r\n  \"bodies\": [\r\n    \"string\"\r\n  ],\r\n  \"author\": \"Doker Ayman\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/{{articleId}}",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{prefixPath}}",
+								"articles",
+								"{{articleId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Article By Id After Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('it should response 200 status code', () => {\r",
+									"    pm.expect(pm.response).to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test('it should response Content-Type header should have application/json value', () => {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.includes('application/json');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should an object', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.an('object');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should have correct property and value', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseJson.status).to.equal('success');\r",
+									"    pm.expect(responseJson.code).to.equal(200);\r",
+									"    pm.expect(responseJson.message).to.equal('Success get article');\r",
+									"    pm.expect(responseJson.data).to.be.an('object');\r",
+									"    pm.expect(responseJson.data).to.be.haveOwnPropertyDescriptor('id', 'number');\r",
+									"    pm.expect(responseJson.data).to.be.haveOwnPropertyDescriptor('title', 'string');\r",
+									"    pm.expect(responseJson.data).to.be.haveOwnPropertyDescriptor('referenceUrl', 'string');\r",
+									"    pm.expect(responseJson.data).to.be.haveOwnPropertyDescriptor('imageUrl', 'string');\r",
+									"    pm.expect(responseJson.data).to.be.haveOwnPropertyDescriptor('author', 'string');\r",
+									"    pm.expect(responseJson.data).to.be.haveOwnPropertyDescriptor('createdAt', 'string');\r",
+									"    pm.expect(responseJson.data).to.be.haveOwnPropertyDescriptor('bodies', 'array');\r",
+									"    \r",
+									"    pm.expect(responseJson.data.title).to.equal('Judul Updated')\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/{{articleId}}",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{prefixPath}}",
+								"articles",
+								"{{articleId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Article By Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('it should response 200 status code', () => {\r",
+									"    pm.expect(pm.response).to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test('it should response Content-Type header should have application/json value', () => {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.includes('application/json');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should an object', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.an('object');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should have correct property and value', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseJson.status).to.equal('success');\r",
+									"    pm.expect(responseJson.code).to.equal(200);\r",
+									"    pm.expect(responseJson.message).to.equal('Success delete article');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/{{articleId}}",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{prefixPath}}",
+								"articles",
+								"{{articleId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Article By Id After Deleted",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('it should response 404 status code', () => {\r",
+									"    pm.expect(pm.response).to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test('it should response Content-Type header should have application/json value', () => {\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.includes('application/json');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should an object', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.an('object');\r",
+									"})\r",
+									"\r",
+									"pm.test('response body should have correct property and value', () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseJson.status).to.equal('fail');\r",
+									"    pm.expect(responseJson.code).to.equal(404);\r",
+									"    pm.expect(responseJson.message).to.equal('Article not found');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/{{articleId}}",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{prefixPath}}",
+								"articles",
+								"{{articleId}}"
 							]
 						}
 					},

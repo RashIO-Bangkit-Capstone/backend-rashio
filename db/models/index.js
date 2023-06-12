@@ -14,6 +14,8 @@ const Predictionlog = require('./predictionlog');
 const Disease = require('./disease');
 const DiseaseDescription = require('./diseasedescription');
 const DiseaseTreatment = require('./diseasetreatment');
+const Article = require('./article');
+const ArticleBody = require('./articlebody');
 
 let sequelize;
 if (config.use_env_variable) {
@@ -60,5 +62,7 @@ db.Predictionlog = Predictionlog(sequelize, Sequelize);
 db.Disease = Disease(sequelize, Sequelize);
 db.DiseaseDescription = DiseaseDescription(sequelize, Sequelize);
 db.DiseaseTreatment = DiseaseTreatment(sequelize, Sequelize);
+db.Article = Article(sequelize, Sequelize);
+db.ArticleBody = ArticleBody(sequelize, Sequelize);
 
 module.exports = db;

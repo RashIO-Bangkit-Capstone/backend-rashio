@@ -17,7 +17,7 @@ class PredictionsHandler {
     const { image } = request.payload;
     this.Validator.validatePostPredictionHeader(image.hapi.headers);
 
-    const imageLocation = await this.BucketService.uploadImage(image);
+    const imageLocation = await this.BucketService.uploadImagePrediction(image);
 
     // TODO: call python script here
 

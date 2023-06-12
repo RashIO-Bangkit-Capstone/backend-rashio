@@ -8,7 +8,7 @@ const routes = (handler, swagger) => [
       description: 'Add a new prediction',
       tags: ['api'],
       payload: {
-        maxBytes: 512000,
+        maxBytes: 3145728,
         allow: 'multipart/form-data',
         multipart: true,
         output: 'stream',
