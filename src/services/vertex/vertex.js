@@ -1,7 +1,8 @@
-const { exec, spawn } = require('child_process');
+const { spawn } = require('child_process');
+const path = require('path');
+const ServerError = require('../../exceptions/ServerError');
 
 // base path
-const path = require('path');
 
 const vertex = async (imgUrl) => 
    new Promise((resolve, reject) => {
@@ -18,6 +19,7 @@ const vertex = async (imgUrl) =>
 
     python.stderr.on('data', (data) => {
       // console.error(`stderr: ${data}`);
+      reject(new ServerError(data.toString()));
     });
 
     python.on('close', (code) => {
@@ -27,7 +29,7 @@ const vertex = async (imgUrl) =>
           percentage: parseFloat(result.split(',')[1].replace('\n', '').replace('\r', '')),
         });
       } else {
-        reject(new Error(`Python process exited with code ${code}`));
+        reject(new ServerError(`Python process exited with code ${code}`));
       }
     });
   })
