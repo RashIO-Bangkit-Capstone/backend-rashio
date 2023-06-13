@@ -31,6 +31,9 @@ const articles = require('./api/articles');
 const ArticlesService = require('./services/database/ArticlesService');
 const ArticlesValidator = require('./validator/articles');
 
+// vertex ai
+const vertexService = require('./services/vertex/vertex');
+
 dotenv.config();
 
 const init = async () => {
@@ -131,6 +134,7 @@ const init = async () => {
       options: {
         bucketService,
         predictionLogsService,
+        vertexService,
         validator: predictionsValidator,
       },
     },

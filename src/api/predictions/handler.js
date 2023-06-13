@@ -1,10 +1,11 @@
 const autoBind = require('auto-bind');
 
 class PredictionsHandler {
-  constructor(bucketService, predictionLogsService, validator) {
+  constructor(bucketService, predictionLogsService, vertexService, validator) {
     this.BucketService = bucketService;
     this.PredictionLogsService = predictionLogsService;
     this.Validator = validator;
+    this.VertexService = vertexService;
 
     autoBind(this);
   }
@@ -20,13 +21,17 @@ class PredictionsHandler {
     const imageLocation = await this.BucketService.uploadImagePrediction(image);
 
     // TODO: call python script here
+    const { result, percentage } = await this.VertexService(imageLocation);
+
+    // console.log('test: ', test);
+    
 
     // TODO: get result and percentage from python script
 
     await this.PredictionLogsService.addPredictionLog({
       userId,
-      result: 'panu',
-      percentage: 0.7,
+      result,
+      percentage,
       imageUrl: imageLocation,
     });
 
@@ -35,8 +40,8 @@ class PredictionsHandler {
       code: 201,
       message: 'Detection success',
       data: {
-        result: 'panu',
-        percentage: 0.7,
+        result,
+        percentage,
       },
     });
 
