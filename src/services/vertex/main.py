@@ -49,7 +49,7 @@ response = response.json()
 predictions = np.array(response['predictions'])
 
 # Interpret the predictions
-class_labels = ['dermatitis', 'eczema', 'psoriasis']  # Replace with your own class labels
+class_labels = ['Dermatitis', 'Eczema/Eksim', 'Psoriasis']  # Replace with your own class labels
 predicted_class = np.argmax(predictions[0])
 predicted_label = class_labels[predicted_class]
 confidence = predictions[0][predicted_class]
