@@ -18,6 +18,9 @@ module.exports = {
       referenceUrl: {
         type: Sequelize.STRING
       },
+      author: { 
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
