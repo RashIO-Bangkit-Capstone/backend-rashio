@@ -6,7 +6,7 @@ import subprocess
 from io import BytesIO
 
 # URL endpoint
-endpoint_url = 'https://asia-southeast2-aiplatform.googleapis.com/v1/projects/valid-heuristic-388905/locations/asia-southeast2/endpoints/8660105424084664320:predict'
+endpoint_url = sys.argv[2]
 
 # Set up authentication
 token = ""
