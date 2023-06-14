@@ -1,14 +1,16 @@
 const { spawn } = require('child_process');
 const path = require('path');
 const ServerError = require('../../exceptions/ServerError');
-
-// base path
+require('dotenv').config();
 
 const vertex = async (imgUrl) => 
    new Promise((resolve, reject) => {
     const pythonPath = path.resolve(__dirname, 'main.py');
 
-    const python = spawn('python', [pythonPath, imgUrl]);
+    const pythonCommand = process.env.PYTHON_COMMAND || 'python';
+    const vertexEndpoint = process.env.VERTEX_AI_ENDPOINT;
+
+    const python = spawn(pythonCommand, [pythonPath, imgUrl, vertexEndpoint]);
 
     let result = '';
 
