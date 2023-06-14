@@ -42,6 +42,7 @@ class PredictionsHandler {
       data: {
         result,
         percentage,
+        imageUrl: imageLocation,
       },
     });
 
