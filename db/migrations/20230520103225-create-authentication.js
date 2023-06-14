@@ -3,7 +3,7 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Authentications', {
       refreshToken: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(500),
         allowNull: false,
         primaryKey: true,
       },

@@ -21,12 +21,14 @@ class AuthenticationsHandler {
       id: user.id,
       name: user.name,
       email: user.email,
+      phoneNumber: user.phoneNumber,
     });
 
     const refreshToken = this.TokenManager.generateRefreshToken({
       id: user.id,
       name: user.name,
       email: user.email,
+      phoneNumber: user.phoneNumber,
     });
 
     await this.AuthenticationsService.addRefreshToken(refreshToken);

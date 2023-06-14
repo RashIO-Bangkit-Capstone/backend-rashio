@@ -31,6 +31,9 @@ const articles = require('./api/articles');
 const ArticlesService = require('./services/database/ArticlesService');
 const ArticlesValidator = require('./validator/articles');
 
+// vertex ai
+const vertexService = require('./services/vertex/vertex');
+
 dotenv.config();
 
 const init = async () => {
@@ -100,6 +103,7 @@ const init = async () => {
         id: artifacts.decoded.payload.id,
         name: artifacts.decoded.payload.name,
         email: artifacts.decoded.payload.email,
+        phoneNumber: artifacts.decoded.payload.phoneNumber,
       },
     }),
   });
@@ -130,6 +134,7 @@ const init = async () => {
       options: {
         bucketService,
         predictionLogsService,
+        vertexService,
         validator: predictionsValidator,
       },
     },
