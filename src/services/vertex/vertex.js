@@ -1,6 +1,7 @@
 const { spawn } = require('child_process');
 const path = require('path');
 const ServerError = require('../../exceptions/ServerError');
+const InvariantError = require('../../exceptions/InvariantError');
 require('dotenv').config();
 
 const vertex = async (imgUrl) => 
@@ -26,9 +27,15 @@ const vertex = async (imgUrl) =>
 
     python.on('close', (code) => {
       if (code === 0) {
+        const percentage =  parseFloat(result.split(',')[1].replace('\n', '').replace('\r', ''));
+
+        if (percentage < 0.6) {
+          reject(new InvariantError('Penyakit tidak terdeteksi, cek kembali gambar yang diunggah'));
+        }
+
         resolve({
           result: result.split(',')[0],
-          percentage: parseFloat(result.split(',')[1].replace('\n', '').replace('\r', '')),
+          percentage
         });
       } else {
         reject(new ServerError(`Python process exited with code ${code}`));
