@@ -30,6 +30,7 @@
 | DELETE | /diseases/{nameDiseases} | Delete a disease description       |
 | --     | --                       | --                                 |
 | POST   | /articles                | Create an article                  |
+| GET    | /articles/               | Get all article                    |
 | GET    | /articles/{id}           | Get an article                     |
 | PUT    | /articles/{id}           | Update an article                  |
 | DELETE | /articles/{id}           | Delete an article                  |
@@ -62,8 +63,8 @@
 
 - [x] Integrate with Google Cloud Storage Bucket
 - [x] Deploy dev API in GCP
-- [ ] Deploy prod API in GCP
-- [ ] Deploy ML model in GCP
+- [x] Deploy prod API in GCP
+- [x] Deploy ML model in GCP
 
 
 ### Postman Testing
