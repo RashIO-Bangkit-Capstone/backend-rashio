@@ -39,6 +39,7 @@ class PredictionLogsService {
       where: {
         userId,
       },
+      order: [['createdAt', 'DESC']],
       attributes: {
         exclude: ['id', 'userId', 'updatedAt'],
       },
