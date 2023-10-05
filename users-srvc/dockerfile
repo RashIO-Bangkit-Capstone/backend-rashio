@@ -1,0 +1,32 @@
+FROM node:18
+
+WORKDIR /usr/src/app
+
+# Install app dependencies
+COPY package*.json ./
+RUN npm install
+
+# Install sequelize-cli
+RUN npm install -g sequelize-cli
+
+# Bundle app source
+COPY . .
+
+# Expose port 9000
+EXPOSE 9000
+
+# Set environment variables
+ENV HOST=0.0.0.0 \
+    PORT=9000 \
+    NODE_ENV=development \
+    BASE_PATH=/api \
+    DB_USER_DEV=root \
+    DB_PASS_DEV=password \
+    DB_NAME_DEV=db_rashio_users \
+    DB_HOST_DEV=localhost \
+    DB_DIALLCT_DEV=mysql
+
+# Run migrations and start the app
+CMD ["sh", "-c", "npm run db:migrate && npm run start"]
+
+
