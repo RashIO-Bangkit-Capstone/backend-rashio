@@ -69,7 +69,7 @@ const init = async () => {
 
   const swaggerOptions = {
     info: {
-      title: 'RashIO API Documentation',
+      title: 'RashIO API Dokumentasi',
       version: Pack.version,
     },
     basePath: process.env.BASE_PATH,
