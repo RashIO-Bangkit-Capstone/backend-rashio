@@ -1,3 +1,5 @@
+const { Response404 } = require("../../validator/errorSchema");
+
 const swagger = (schema) => ({
   postAuthenticationSwagger: {
     validate: {
@@ -10,14 +12,7 @@ const swagger = (schema) => ({
       },
       404: {
         description: 'Bad Request',
-        schema: {
-          type: 'object',
-          properties: {
-            status: { type: 'string' },
-            code: { type: 'number' },
-            message: { type: 'string' },
-          },
-        },
+        schema: Response404,
       },
     },
   },
@@ -33,14 +28,7 @@ const swagger = (schema) => ({
       },
       404: {
         description: 'Bad Request',
-        schema: {
-          type: 'object',
-          properties: {
-            status: { type: 'string' },
-            code: { type: 'number' },
-            message: { type: 'string' },
-          },
-        },
+        schema: Response404,
       },
     },
   },
@@ -56,14 +44,7 @@ const swagger = (schema) => ({
       },
       404: {
         description: 'Bad Request',
-        schema: {
-          type: 'object',
-          properties: {
-            status: { type: 'string' },
-            code: { type: 'number' },
-            message: { type: 'string' },
-          },
-        },
+        schema: Response404,
       },
     },
   },
