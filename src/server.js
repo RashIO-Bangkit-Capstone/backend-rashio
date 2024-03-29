@@ -19,7 +19,6 @@ const AuthenticationsValidator = require('./validator/authentications');
 const tokenManager = require('./tokenize/TokenManager');
 // module api prediction
 const predictions = require('./api/predictions');
-const BucketService = require('./services/storage/BucketService');
 const PredictionLogsService = require('./services/database/PredictionLogsService');
 const PredictionsValidator = require('./validator/predictions');
 // module api diseases
@@ -34,6 +33,8 @@ const ArticlesValidator = require('./validator/articles');
 // vertex ai
 const vertexService = require('./services/vertex/vertex');
 
+const LocalStorageService = require('./services/storage/LocalStorageService');
+
 dotenv.config();
 
 const init = async () => {
@@ -44,7 +45,7 @@ const init = async () => {
   const authenticationsService = new AuthenticationsService();
   const authenticationsValidator = new AuthenticationsValidator();
   // create instance of prediction service and validator
-  const bucketService = new BucketService();
+  const bucketService = new LocalStorageService();
   const predictionLogsService = new PredictionLogsService();
   const predictionsValidator = new PredictionsValidator();
   // create instance of diseases service and validator
