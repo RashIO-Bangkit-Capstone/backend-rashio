@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "a3401756-1c4e-41ea-8395-c0147bb2f265",
+		"_postman_id": "d1ea82f4-de28-45d9-adb8-9ba33674fa8b",
 		"name": "Rash IO API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27817642"
 	},
 	"item": [
 		{
@@ -216,7 +217,8 @@
 								"exec": [
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						},
 						{
@@ -241,10 +243,11 @@
 									"    \r",
 									"    pm.expect(responseJson.status).to.equal('fail');\r",
 									"    pm.expect(responseJson.code).to.equal(400);\r",
-									"    pm.expect(responseJson.message).to.equal('Phone number already used');\r",
+									"    pm.expect(responseJson.message).to.equal('Phone Number already used');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -284,7 +287,8 @@
 								"exec": [
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						},
 						{
@@ -309,10 +313,11 @@
 									"    \r",
 									"    pm.expect(responseJson.status).to.equal('fail');\r",
 									"    pm.expect(responseJson.code).to.equal(400);\r",
-									"    pm.expect(responseJson.message).to.equal('Email must be a valid email');\r",
+									"    pm.expect(responseJson.message).to.equal('\\\"Email\\\" must be a valid email');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -377,7 +382,7 @@
 									"    \r",
 									"    pm.expect(responseJson.status).to.equal('fail');\r",
 									"    pm.expect(responseJson.code).to.equal(400);\r",
-									"    pm.expect(responseJson.message).to.equal('Phone number must be a valid phone number');\r",
+									"    pm.expect(responseJson.message).to.equal('\\\"Phone Number\\\" must be a valid phone number');\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -1068,7 +1073,8 @@
 									"pm.environment.set('accessToken', responseJson.data.accessToken);\r",
 									"pm.environment.set('refreshToken', responseJson.data.refreshToken);"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -1471,10 +1477,11 @@
 									"    \r",
 									"    pm.expect(responseJson.status).to.equal('fail');\r",
 									"    pm.expect(responseJson.code).to.equal(400);\r",
-									"    pm.expect(responseJson.message).to.equal('Phone number already used');\r",
+									"    pm.expect(responseJson.message).to.equal('Phone Number already used');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
