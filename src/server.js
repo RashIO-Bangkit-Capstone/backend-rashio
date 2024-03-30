@@ -29,9 +29,8 @@ const DiseasesValidator = require('./validator/diseases');
 const articles = require('./api/articles');
 const ArticlesService = require('./services/database/ArticlesService');
 const ArticlesValidator = require('./validator/articles');
-
-// vertex ai
-const vertexService = require('./services/vertex/vertex');
+// module service ml
+const MachineLearning = require('./services/ml/MachineLearning');
 
 const LocalStorageService = require('./services/storage/LocalStorageService');
 
@@ -54,6 +53,9 @@ const init = async () => {
   // create instance of articles service and validator
   const articlesService = new ArticlesService();
   const articlesValidator = new ArticlesValidator();
+
+  const mlService = new MachineLearning();
+  await mlService.loadModel()
 
   const server = Hapi.server({
     port: process.env.PORT || 5000,
@@ -135,7 +137,7 @@ const init = async () => {
       options: {
         bucketService,
         predictionLogsService,
-        vertexService,
+        mlService,
         validator: predictionsValidator,
       },
     },

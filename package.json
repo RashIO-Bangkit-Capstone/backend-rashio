@@ -9,7 +9,8 @@
     "lint": "eslint ./src ./db",
     "lint-fix": "eslint ./src ./db --fix",
     "db:migrate": "npx sequelize-cli db:migrate",
-    "db:migrate:undo": "npx sequelize-cli db:migrate:undo"
+    "db:migrate:undo": "npx sequelize-cli db:migrate:undo",
+    "db:migrate:undo:all": "npx sequelize-cli db:migrate:undo:all"
   },
   "keywords": [],
   "author": "",
@@ -19,8 +20,10 @@
     "@hapi/inert": "^7.1.0",
     "@hapi/jwt": "^3.2.0",
     "@hapi/vision": "^7.0.1",
+    "@tensorflow/tfjs-node": "^4.17.0",
     "auto-bind": "^4.0.0",
     "bcrypt": "^5.1.0",
+    "canvas": "^2.11.2",
     "dotenv": "^16.0.3",
     "hapi-swagger": "^16.0.1",
     "joi": "^17.9.2",
@@ -35,6 +38,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsdoc": "^48.2.2",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.8",
     "sequelize-cli": "^6.6.0"
