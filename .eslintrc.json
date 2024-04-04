@@ -8,9 +8,10 @@
   "parserOptions": {
     "ecmaVersion": "latest"
   },
-  "plugins": [],
+  "plugins": ["jsdoc"],
   "rules": {
     "linebreak-style": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "jsdoc/no-undefined-types": 1
   }
 }

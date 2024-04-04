@@ -24,7 +24,7 @@ class UsersService {
     const user = await this.User.findOne({ where: { phoneNumber } });
 
     if (user) {
-      throw new InvariantError('Phone number already used');
+      throw new InvariantError('Phone Number already used');
     }
   }
 

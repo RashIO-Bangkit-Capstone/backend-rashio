@@ -1,32 +1,42 @@
+const { Request, ResponseToolkit } = require('@hapi/hapi');
 const autoBind = require('auto-bind');
+const MachineLearning = require('../../services/ml/MachineLearning');
+const LocalStorageService = require('../../services/storage/LocalStorageService');
+const PredictionLogsService = require('../../services/database/PredictionLogsService');
+const PredictionsValidator = require('../../validator/predictions');
 
 class PredictionsHandler {
-  constructor(bucketService, predictionLogsService, vertexService, validator) {
+  /**
+   * @param {LocalStorageService} bucketService
+   * @param {PredictionLogsService} predictionLogsService
+   * @param {MachineLearning} mlService
+   * @param {PredictionsValidator} validator
+   */
+  constructor(bucketService, predictionLogsService, mlService, validator) {
     this.BucketService = bucketService;
     this.PredictionLogsService = predictionLogsService;
+    this.Ml = mlService;
     this.Validator = validator;
-    this.VertexService = vertexService;
 
     autoBind(this);
   }
 
+  /**
+   * @param {Request} request
+   * @param {ResponseToolkit} h
+   */
   async postPredictionHandler(request, h) {
     const { id: userId } = request.auth.credentials;
-    
+
     this.Validator.validatePostPredictionPayload(request.payload);
-    
+
     const { image } = request.payload;
     this.Validator.validatePostPredictionHeader(image.hapi.headers);
 
+    // eslint-disable-next-line no-underscore-dangle
+    const { result, percentage } = await this.Ml.predict(image._data);
+
     const imageLocation = await this.BucketService.uploadImagePrediction(image);
-
-    // TODO: call python script here
-    const { result, percentage } = await this.VertexService(imageLocation);
-
-    // console.log('test: ', test);
-    
-
-    // TODO: get result and percentage from python script
 
     await this.PredictionLogsService.addPredictionLog({
       userId,
@@ -51,6 +61,10 @@ class PredictionsHandler {
     return response;
   }
 
+  /**
+   * @param {Request} request
+   * @param {ResponseToolkit} h
+   */
   async getPredictionsHandler(request, h) {
     const { userId } = request.params;
     const { id: credentialId } = request.auth.credentials;

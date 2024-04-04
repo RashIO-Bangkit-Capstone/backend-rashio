@@ -1,0 +1,68 @@
+name: CI/CD
+
+permissions: write-all
+
+on:  
+  push:
+    tags:
+      - "v**"
+
+jobs:
+  preparation:
+    runs-on: ubuntu-latest
+    outputs:
+      VERSION: ${{ steps.get_version.outputs.VERSION }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Get Version
+        id: get_version
+        run: echo "VERSION=$(echo $GITHUB_REF | cut -d '/' -f 3)" >> $GITHUB_OUTPUT
+    
+  build:
+    runs-on: ubuntu-latest
+    needs: preparation
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        env:
+          VERSION: ${{ needs.preparation.outputs.VERSION }}
+        run: docker build -t ghcr.io/rashio-bangkit-capstone/rashio-be:$VERSION .  
+      
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Push Docker image
+        env:
+          SHA: ${{ needs.preparation.outputs.SHA }}
+        run: docker push ghcr.io/rashio-bangkit-capstone/rashio-be:$VERSION
+      
+  deploy-dev:
+    runs-on: ubuntu-latest
+    needs:
+      - preparation
+      - build
+
+    steps:
+      - name: Update Docker Compose via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          VERSION: ${{ needs.preparation.outputs.VERSION }}
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          envs: VERSION
+          script: |
+            cd /app
+            sed -i "s/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:.*/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:$VERSION/g" compose.yaml
+            docker compose up rashio-be-dev -d

@@ -1,3 +1,5 @@
+const { Response403, Response400 } = require('../../validator/errorSchema');
+
 const swagger = (schema) => ({
   postUserSwagger: {
     validate: {
@@ -10,14 +12,7 @@ const swagger = (schema) => ({
       },
       400: {
         description: 'Bad Request',
-        schema: {
-          type: 'object',
-          properties: {
-            status: { type: 'string' },
-            code: { type: 'number' },
-            message: { type: 'string' },
-          },
-        },
+        schema: Response400,
       },
     },
   },
@@ -34,14 +29,7 @@ const swagger = (schema) => ({
       },
       403: {
         description: 'Forbidden',
-        schema: {
-          type: 'object',
-          properties: {
-            status: { type: 'string' },
-            code: { type: 'number' },
-            message: { type: 'string' },
-          },
-        },
+        schema: Response403,
       },
     },
   },
@@ -59,25 +47,11 @@ const swagger = (schema) => ({
       },
       400: {
         description: 'Bad Request',
-        schema: {
-          type: 'object',
-          properties: {
-            status: { type: 'string' },
-            code: { type: 'number' },
-            message: { type: 'string' },
-          },
-        },
+        schema: Response400,
       },
       403: {
         description: 'Forbidden',
-        schema: {
-          type: 'object',
-          properties: {
-            status: { type: 'string' },
-            code: { type: 'number' },
-            message: { type: 'string' },
-          },
-        },
+        schema: Response403,
       },
     },
   },
@@ -95,25 +69,11 @@ const swagger = (schema) => ({
       },
       400: {
         description: 'Bad Request',
-        schema: {
-          type: 'object',
-          properties: {
-            status: { type: 'string' },
-            code: { type: 'number' },
-            message: { type: 'string' },
-          },
-        },
+        schema: Response400,
       },
       403: {
         description: 'Forbidden',
-        schema: {
-          type: 'object',
-          properties: {
-            status: { type: 'string' },
-            code: { type: 'number' },
-            message: { type: 'string' },
-          },
-        },
+        schema: Response403,
       },
     },
   },

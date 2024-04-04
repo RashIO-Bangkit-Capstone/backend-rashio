@@ -19,7 +19,6 @@ const AuthenticationsValidator = require('./validator/authentications');
 const tokenManager = require('./tokenize/TokenManager');
 // module api prediction
 const predictions = require('./api/predictions');
-const BucketService = require('./services/storage/BucketService');
 const PredictionLogsService = require('./services/database/PredictionLogsService');
 const PredictionsValidator = require('./validator/predictions');
 // module api diseases
@@ -30,9 +29,10 @@ const DiseasesValidator = require('./validator/diseases');
 const articles = require('./api/articles');
 const ArticlesService = require('./services/database/ArticlesService');
 const ArticlesValidator = require('./validator/articles');
+// module service ml
+const MachineLearning = require('./services/ml/MachineLearning');
 
-// vertex ai
-const vertexService = require('./services/vertex/vertex');
+const LocalStorageService = require('./services/storage/LocalStorageService');
 
 dotenv.config();
 
@@ -44,7 +44,7 @@ const init = async () => {
   const authenticationsService = new AuthenticationsService();
   const authenticationsValidator = new AuthenticationsValidator();
   // create instance of prediction service and validator
-  const bucketService = new BucketService();
+  const bucketService = new LocalStorageService();
   const predictionLogsService = new PredictionLogsService();
   const predictionsValidator = new PredictionsValidator();
   // create instance of diseases service and validator
@@ -53,6 +53,9 @@ const init = async () => {
   // create instance of articles service and validator
   const articlesService = new ArticlesService();
   const articlesValidator = new ArticlesValidator();
+
+  const mlService = new MachineLearning();
+  await mlService.loadModel()
 
   const server = Hapi.server({
     port: process.env.PORT || 5000,
@@ -134,7 +137,7 @@ const init = async () => {
       options: {
         bucketService,
         predictionLogsService,
-        vertexService,
+        mlService,
         validator: predictionsValidator,
       },
     },

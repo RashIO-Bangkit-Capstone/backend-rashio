@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "a3401756-1c4e-41ea-8395-c0147bb2f265",
+		"_postman_id": "d1ea82f4-de28-45d9-adb8-9ba33674fa8b",
 		"name": "Rash IO API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27817642"
 	},
 	"item": [
 		{
@@ -216,7 +217,8 @@
 								"exec": [
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						},
 						{
@@ -241,10 +243,11 @@
 									"    \r",
 									"    pm.expect(responseJson.status).to.equal('fail');\r",
 									"    pm.expect(responseJson.code).to.equal(400);\r",
-									"    pm.expect(responseJson.message).to.equal('Phone number already used');\r",
+									"    pm.expect(responseJson.message).to.equal('Phone Number already used');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -284,7 +287,8 @@
 								"exec": [
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						},
 						{
@@ -309,10 +313,11 @@
 									"    \r",
 									"    pm.expect(responseJson.status).to.equal('fail');\r",
 									"    pm.expect(responseJson.code).to.equal(400);\r",
-									"    pm.expect(responseJson.message).to.equal('Email must be a valid email');\r",
+									"    pm.expect(responseJson.message).to.equal('\\\"Email\\\" must be a valid email');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -377,7 +382,7 @@
 									"    \r",
 									"    pm.expect(responseJson.status).to.equal('fail');\r",
 									"    pm.expect(responseJson.code).to.equal(400);\r",
-									"    pm.expect(responseJson.message).to.equal('Phone number must be a valid phone number');\r",
+									"    pm.expect(responseJson.message).to.equal('\\\"Phone Number\\\" must be a valid phone number');\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -635,10 +640,11 @@
 									"    \r",
 									"    pm.expect(responseJson.status).to.equal('fail');\r",
 									"    pm.expect(responseJson.code).to.equal(400);\r",
-									"    pm.expect(responseJson.message).to.equal('Email is required');\r",
+									"    pm.expect(responseJson.message).to.equal(\"\\\"Email\\\" is required\");\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -1068,7 +1074,8 @@
 									"pm.environment.set('accessToken', responseJson.data.accessToken);\r",
 									"pm.environment.set('refreshToken', responseJson.data.refreshToken);"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -1471,10 +1478,11 @@
 									"    \r",
 									"    pm.expect(responseJson.status).to.equal('fail');\r",
 									"    pm.expect(responseJson.code).to.equal(400);\r",
-									"    pm.expect(responseJson.message).to.equal('Phone number already used');\r",
+									"    pm.expect(responseJson.message).to.equal('Phone Number already used');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -2017,7 +2025,8 @@
 									"    pm.expect(responseJson.data.percentage).to.be.an('number');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -2040,7 +2049,7 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/nakro/OneDrive/Gambar/5eae34a7dd090.jpg"
+									"src": "postman-cloud:///1eeee3bc-6154-4d30-8fd9-d785c5c76daa"
 								}
 							]
 						},
@@ -2084,10 +2093,11 @@
 									"    \r",
 									"    pm.expect(responseJson.status).to.equal('fail');\r",
 									"    pm.expect(responseJson.code).to.equal(400);\r",
-									"    pm.expect(responseJson.message).to.equal('Image is required');\r",
+									"    pm.expect(responseJson.message).to.equal('\"Image\" is required');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -2154,10 +2164,11 @@
 									"    \r",
 									"    pm.expect(responseJson.status).to.equal('fail');\r",
 									"    pm.expect(responseJson.code).to.equal(400);\r",
-									"    pm.expect(responseJson.message).to.equal('Image must valid image type');\r",
+									"    pm.expect(responseJson.message).to.equal('\"Image\" must valid image type');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -2180,7 +2191,7 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/nakro/OneDrive/Dokumen/insyallah judul.txt"
+									"src": "postman-cloud:///1eeee3bd-4ff0-4cf0-a9cc-11c747be1eff"
 								}
 							]
 						},
@@ -2480,7 +2491,8 @@
 								"exec": [
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						},
 						{
@@ -2505,11 +2517,12 @@
 									"    \r",
 									"    pm.expect(responseJson.status).to.equal('fail');\r",
 									"    pm.expect(responseJson.code).to.equal(400);\r",
-									"    pm.expect(responseJson.message).to.equal('Name is required');\r",
+									"    pm.expect(responseJson.message).to.equal('\"Name\" is required');\r",
 									"\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -2549,7 +2562,8 @@
 								"exec": [
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						},
 						{
@@ -2574,11 +2588,12 @@
 									"    \r",
 									"    pm.expect(responseJson.status).to.equal('fail');\r",
 									"    pm.expect(responseJson.code).to.equal(400);\r",
-									"    pm.expect(responseJson.message).to.equal('Descriptions must be an array');\r",
+									"    pm.expect(responseJson.message).to.equal('\"Descriptions\" must be an array');\r",
 									"\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -2765,7 +2780,8 @@
 									"    pm.expect(responseJson.data.treatments[0]).to.be.a('string');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -2773,7 +2789,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/disease{{diseaseIndex}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/Disease{{diseaseIndex}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
@@ -2782,7 +2798,7 @@
 							"path": [
 								"{{prefixPath}}",
 								"diseases",
-								"disease{{diseaseIndex}}"
+								"Disease{{diseaseIndex}}"
 							]
 						}
 					},
@@ -2848,7 +2864,8 @@
 								"exec": [
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						},
 						{
@@ -2876,7 +2893,8 @@
 									"    pm.expect(responseJson.message).to.equal('Disease updated successfully');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -2893,7 +2911,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/disease{{diseaseIndex}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/Disease{{diseaseIndex}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
@@ -2902,7 +2920,7 @@
 							"path": [
 								"{{prefixPath}}",
 								"diseases",
-								"disease{{diseaseIndex}}"
+								"Disease{{diseaseIndex}}"
 							]
 						}
 					},
@@ -2917,7 +2935,8 @@
 								"exec": [
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						},
 						{
@@ -2945,7 +2964,8 @@
 									"    pm.expect(responseJson.message).to.equal('Descriptions is required');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -2962,7 +2982,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/disease{{diseaseIndex}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/Disease{{diseaseIndex}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
@@ -2971,7 +2991,7 @@
 							"path": [
 								"{{prefixPath}}",
 								"diseases",
-								"disease{{diseaseIndex}}"
+								"Disease{{diseaseIndex}}"
 							]
 						}
 					},
@@ -3083,7 +3103,8 @@
 									"    pm.expect(responseJson.data.treatments[0]).to.be.a('string');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -3091,7 +3112,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/disease{{diseaseIndex}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/Disease{{diseaseIndex}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
@@ -3100,7 +3121,7 @@
 							"path": [
 								"{{prefixPath}}",
 								"diseases",
-								"disease{{diseaseIndex}}"
+								"Disease{{diseaseIndex}}"
 							]
 						}
 					},
@@ -3134,7 +3155,8 @@
 									"    pm.expect(responseJson.message).to.equal('Disease deleted successfully');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -3142,7 +3164,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/disease{{diseaseIndex}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/Disease{{diseaseIndex}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
@@ -3151,7 +3173,7 @@
 							"path": [
 								"{{prefixPath}}",
 								"diseases",
-								"disease{{diseaseIndex}}"
+								"Disease{{diseaseIndex}}"
 							]
 						}
 					},
@@ -3236,7 +3258,8 @@
 									"    pm.expect(responseJson.message).to.equal('Disease not found');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -3244,7 +3267,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/disease{{diseaseIndex}}",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/diseases/Disease{{diseaseIndex}}",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
@@ -3253,7 +3276,7 @@
 							"path": [
 								"{{prefixPath}}",
 								"diseases",
-								"disease{{diseaseIndex}}"
+								"Disease{{diseaseIndex}}"
 							]
 						}
 					},
@@ -3475,7 +3498,8 @@
 									"    pm.expect(responseJson.data).to.be.haveOwnPropertyDescriptor('imageUrl', 'string')\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -3491,7 +3515,7 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/nakro/OneDrive/Gambar/5eae34a7dd090.jpg"
+									"src": "postman-cloud:///1eeee3bc-6154-4d30-8fd9-d785c5c76daa"
 								}
 							]
 						},
@@ -3537,10 +3561,11 @@
 									"    \r",
 									"    pm.expect(responseJson.status).to.equal('fail');\r",
 									"    pm.expect(responseJson.code).to.equal(400);\r",
-									"    pm.expect(responseJson.message).to.equal('Image must valid image type');\r",
+									"    pm.expect(responseJson.message).to.equal('\"Image\" must valid image type');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -3556,7 +3581,7 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/nakro/OneDrive/Dokumen/insyallah judul.txt"
+									"src": "postman-cloud:///1eeee3bd-4ff0-4cf0-a9cc-11c747be1eff"
 								}
 							]
 						},
@@ -3602,10 +3627,11 @@
 									"    \r",
 									"    pm.expect(responseJson.status).to.equal('fail');\r",
 									"    pm.expect(responseJson.code).to.equal(400);\r",
-									"    pm.expect(responseJson.message).to.equal('Image is required');\r",
+									"    pm.expect(responseJson.message).to.equal('\"Image\" is required');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -3621,7 +3647,7 @@
 								{
 									"key": "gambar",
 									"type": "file",
-									"src": "/C:/Users/nakro/OneDrive/Dokumen/insyallah judul.txt"
+									"src": "postman-cloud:///1eeee3bd-4ff0-4cf0-a9cc-11c747be1eff"
 								}
 							]
 						},
@@ -3785,7 +3811,8 @@
 									"    pm.expect(responseJson.message).to.equal('Article not found');\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -3793,7 +3820,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/gkada",
+							"raw": "{{protocol}}://{{host}}:{{port}}/{{prefixPath}}/articles/-1",
 							"protocol": "{{protocol}}",
 							"host": [
 								"{{host}}"
@@ -3802,7 +3829,7 @@
 							"path": [
 								"{{prefixPath}}",
 								"articles",
-								"gkada"
+								"-1"
 							]
 						}
 					},

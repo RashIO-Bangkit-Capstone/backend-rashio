@@ -7,12 +7,12 @@ module.exports = {
   version: '1.0.0',
   register: async (
     server,
-    { bucketService, predictionLogsService, vertexService, validator }
+    { bucketService, predictionLogsService, mlService,validator }
   ) => {
     const predictionsHandler = new PredictionsHandler(
       bucketService,
       predictionLogsService,
-      vertexService,
+      mlService,
       validator
     );
     server.route(routes(predictionsHandler, swagger(validator.schema)));

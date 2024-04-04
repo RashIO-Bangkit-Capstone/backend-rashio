@@ -2,35 +2,31 @@ const Joi = require('joi');
 
 module.exports = {
   PostDiseasesPayloadSchema: Joi.object({
-    name: Joi.string().required().messages({
-      'any.required': 'Name is required',
-      'string.base': 'Name must be a string',
-    }),
-
+    name: Joi.string().required().label('Name'),
     descriptions: Joi.array()
       .items(
         Joi.string().messages({
-          'string.base': 'Descriptions must be a string',
+          'string.base': '"Descriptions" must be a string',
         })
       )
       .required()
       .messages({
-        'any.required': 'Descriptions is required',
-        'array.base': 'Descriptions must be an array',
+        'any.required': '"Descriptions" is required',
+        'array.base': '"Descriptions" must be an array',
       }),
 
     treatments: Joi.array()
       .items(
         Joi.string().messages({
-          'string.base': 'Treatments must be a string',
+          'string.base': '"Treatments" must be a string',
         })
       )
       .required()
       .messages({
-        'any.required': 'Treatments is required',
-        'array.base': 'Treatments must be an array',
+        'any.required': '"Treatments" is required',
+        'array.base': '"Treatments" must be an array',
       }),
-  }).label('PostDiseasesPayloadSchema'),
+  }).label('Post Diseases Payload Schema'),
 
   ResponsePostDiseasesSchema: Joi.object({
     status: Joi.string(),
@@ -39,8 +35,8 @@ module.exports = {
     data: Joi.object({
       id: Joi.string(),
       name: Joi.string(),
-    }),
-  }).label('ResponsePostDiseasesSchema'),
+    }).label('Response Post Diseases Schema Data'),
+  }).label('Response Post DiseasesSchema'),
 
   ResponseGetDiseasesSchema: Joi.object({
     status: Joi.string(),
@@ -50,13 +46,13 @@ module.exports = {
       Joi.object({
         id: Joi.string(),
         name: Joi.string(),
-      })
-    ),
-  }).label('ResponseGetDiseasesSchema'),
+      }).label('Response Get Diseases Schema Data Item')
+    ).label('Response Get Diseases Schema Data'),
+  }).label('Response Get Diseases Schema'),
 
   DiseaseParamsSchema: Joi.object({
     name: Joi.string().required(),
-  }).label('GetDiseaseParamsSchema'),
+  }).label('Get Disease Params Schema'),
 
   ResponseGetDiseaseSchema: Joi.object({
     status: Joi.string(),
@@ -67,8 +63,8 @@ module.exports = {
       name: Joi.string(),
       descriptions: Joi.array().items(Joi.string()),
       treatments: Joi.array().items(Joi.string()),
-    }),
-  }).label('ResponseGetDiseaseSchema'),
+    }).label('Response Get Disease Schema Data'),
+  }).label('Response Get Disease Schema'),
 
   PutDiseasePayloadSchema: Joi.object({
     descriptions: Joi.array()
@@ -95,17 +91,17 @@ module.exports = {
         'any.required': 'Treatments is required',
         'array.base': 'Treatments must be an array',
       }),
-  }).label('PutDiseasesPayloadSchema'),
+  }).label('Put Diseases Payload Schema'),
 
   ResponsePutDiseaseSchema: Joi.object({
     status: Joi.string(),
     code: Joi.number(),
     message: Joi.string(),
-  }).label('ResponsePutDiseaseSchema'),
+  }).label('Response Put Disease Schema'),
 
   ResponseDeleteDiseaseSchema: Joi.object({
     status: Joi.string(),
     code: Joi.number(),
     message: Joi.string(),
-  }).label('ResponseDeleteDiseaseSchema'),
+  }).label('Response Delete Disease Schema'),
 };

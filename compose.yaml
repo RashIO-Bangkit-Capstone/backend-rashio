@@ -1,0 +1,37 @@
+networks:
+  rashio:
+    driver: bridge
+services:
+  backend:
+    image: ghcr.io/rashio-bangkit-capstone/test-be-rashio:v0.0.2 
+    ports:
+      - "9000:9000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=9000
+      - NODE_ENV=production
+      - BASE_PATH=/api
+      - UPLOAD_BASE_URL=http://localhost:9090
+      - DB_USER_PROD=postgres
+      - DB_PASS_PROD=password
+      - DB_NAME_PROD=db_rashio
+      - DB_HOST_PROD=postgres
+      - DB_DIALECT_PROD=postgres
+      - ACCESS_TOKEN_KEY=dsfjvhbn84g7h9ndafv98234fgbnjvnbvhj5r457r3w897bjhvvfd
+      - REFRESH_TOKEN_KEY=4r3w897bjhvvfdsvfjvhbn84g7h9ndafv98234fgbnjvnbhj5r45
+      - ACCESS_TOKEN_LIFE=600000
+    restart: always
+    depends_on:
+      - postgres
+    networks:
+      - rashio
+  
+  postgres:
+    image: postgres:12
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: db_rashio
+    restart: always
+    networks:
+      - rashio

@@ -1,7 +1,7 @@
-FROM node:16.13.1-alpine3.14
+FROM node:20-bullseye
 
 # Create app directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Install app dependencies
 COPY package*.json ./
@@ -16,4 +16,6 @@ COPY . .
 EXPOSE 9000
 
 # Run the app
-CMD [ "npm", "start" ]
+COPY script.sh /app/script.sh
+RUN chmod +x /app/script.sh
+CMD [ "/bin/sh", "-c", "/app/script.sh"]
