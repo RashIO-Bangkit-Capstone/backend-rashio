@@ -42,7 +42,7 @@ jobs:
       
       - name: Push Docker image
         env:
-          SHA: ${{ needs.preparation.outputs.SHA }}
+          VERSION: ${{ needs.preparation.outputs.VERSION }}
         run: docker push ghcr.io/rashio-bangkit-capstone/rashio-be:$VERSION
       
   deploy-dev:
