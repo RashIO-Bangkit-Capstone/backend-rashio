@@ -16,4 +16,6 @@ COPY . .
 EXPOSE 9000
 
 # Run the app
-CMD [ "/bin/sh", "-c", "npm run db:migrate && npm run start"]
+COPY script.sh /app/script.sh
+RUN chmod +x /app/script.sh
+CMD [ "/bin/sh", "-c", "/app/script.sh"]
