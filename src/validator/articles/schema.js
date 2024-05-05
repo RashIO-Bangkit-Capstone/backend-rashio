@@ -1,4 +1,5 @@
 const Joi = require('joi');
+const { ARTICLE_CATEGORIES } = require('../../utils/contans');
 
 module.exports = {
   PostArticlePayloadSchema: Joi.object({
@@ -6,6 +7,7 @@ module.exports = {
     referenceUrl: Joi.string().required(),
     bodies: Joi.array().items(Joi.string()).required(),
     author: Joi.string().required(),
+    category: Joi.string().valid(...ARTICLE_CATEGORIES).required(),
   }).label('Post Article Payload'),
 
   PutArticleImageHeaderSchema: Joi.object({
@@ -33,6 +35,7 @@ module.exports = {
     referenceUrl: Joi.string().required(),
     bodies: Joi.array().items(Joi.string()).required(),
     author: Joi.string().required(),
+    category: Joi.string().valid(...ARTICLE_CATEGORIES).required(),
   }).label('Put Article Payload'),
 
   ResponsePostArticleSchema: Joi.object({
@@ -56,6 +59,7 @@ module.exports = {
           referenceUrl: Joi.string().required(),
           imageUrl: Joi.string().required(),
           author: Joi.string().required(),
+          category: Joi.string().required(),
         }).label('Response Get Articles Schema Data Item')
       )
       .label('Response Get Articles Schema Data'),
@@ -75,6 +79,7 @@ module.exports = {
       referenceUrl: Joi.string().required(),
       imageUrl: Joi.string().required(),
       author: Joi.string().required(),
+      category: Joi.string().required(),
       bodies: Joi.array().items(Joi.string()).required(),
     }).label('Response Get Article By Id Schema Data'),
   }).label('Response Get Article By Id Schema'),
