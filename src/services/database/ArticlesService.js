@@ -5,14 +5,14 @@ const NotFoundError = require('../../exceptions/NotFoundError');
 
 class ArticlesService {
   async addArticle(payload) {
-    const { title, referenceUrl, bodies, author } = payload;
+    const { title, referenceUrl, bodies, author, category } = payload;
 
     // db transaction
     const t = await sequelize.transaction();
 
     try {
       const article = await Article.create(
-        { title, referenceUrl, author },
+        { title, referenceUrl, author, category },
         { transaction: t }
       );
 
@@ -35,7 +35,7 @@ class ArticlesService {
 
   async getArticles() {
     const articles = await Article.findAll({
-      attributes: ['id', 'title', 'referenceUrl', 'imageUrl', 'author'],
+      attributes: ['id', 'title', 'referenceUrl', 'imageUrl', 'author', 'category'],
     });
 
     return articles;
@@ -51,7 +51,7 @@ class ArticlesService {
 
   async getArticleById(id) {
     const article = await Article.findByPk(id, {
-      attributes: ['id', 'title', 'referenceUrl', 'imageUrl', 'author', 'createdAt'],
+      attributes: ['id', 'title', 'referenceUrl', 'imageUrl', 'author', 'category', 'createdAt'],
     });
 
     const articleBodies = await ArticleBody.findAll({
@@ -71,13 +71,13 @@ class ArticlesService {
   }
 
   async updateArticleById(id, payload) {
-    const { title, referenceUrl, bodies, author } = payload;
+    const { title, referenceUrl, bodies, author, category } = payload;
 
     const t = await sequelize.transaction();
 
     try {
       await Article.update(
-        { title, referenceUrl, author },
+        { title, referenceUrl, author, category },
         { where: { id }, transaction: t }
       );
 
