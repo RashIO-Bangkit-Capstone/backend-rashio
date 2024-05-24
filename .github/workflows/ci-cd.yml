@@ -63,6 +63,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           envs: VERSION
           script: |
-            cd /app
-            sed -i "s/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:.*/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:$VERSION/g" compose.yaml
+            cd ~
+            ls -l
+            sed -i "s/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:.*/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:$VERSION/g" docker-compose.yml
             docker compose up rashio-be-dev rashio-be-prod -d
