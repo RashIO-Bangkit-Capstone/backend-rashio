@@ -51,7 +51,7 @@ class DiseasesService {
       return disease;
     } catch (error) {
       await t.rollback();
-      throw new ServerError('Internal server error');
+      throw new ServerError(error.message);
     }
   }
 
@@ -143,7 +143,7 @@ class DiseasesService {
     } catch (error) {
       // rollback transaction
       await t.rollback();
-      throw new ServerError('Internal server error');
+      throw new ServerError(error.message);
     }
   }
 
@@ -177,7 +177,7 @@ class DiseasesService {
     } catch (error) {
       // rollback transaction
       await t.rollback();
-      throw new ServerError('Internal server error');
+      throw new ServerError(error.message);
     }
   }
 }
