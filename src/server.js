@@ -65,7 +65,6 @@ const init = async () => {
         origin: ['*'],
       },
     },
-    
   });
 
   server.realm.modifiers.route.prefix = process.env.BASE_PATH;
