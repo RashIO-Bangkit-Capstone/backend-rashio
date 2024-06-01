@@ -1,5 +1,4 @@
 const InvariantError = require('../../exceptions/InvariantError');
-const ServerError = require('../../exceptions/ServerError');
 const NotFoundError = require('../../exceptions/NotFoundError');
 
 const {
@@ -51,7 +50,7 @@ class DiseasesService {
       return disease;
     } catch (error) {
       await t.rollback();
-      throw new ServerError(error.message);
+      throw error;
     }
   }
 
@@ -143,7 +142,7 @@ class DiseasesService {
     } catch (error) {
       // rollback transaction
       await t.rollback();
-      throw new ServerError(error.message);
+      throw error;
     }
   }
 
@@ -177,7 +176,7 @@ class DiseasesService {
     } catch (error) {
       // rollback transaction
       await t.rollback();
-      throw new ServerError(error.message);
+      throw error;
     }
   }
 }

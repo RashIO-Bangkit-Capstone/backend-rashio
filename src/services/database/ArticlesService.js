@@ -1,5 +1,3 @@
-const ServerError = require('../../exceptions/ServerError');
-
 const { Article, ArticleBody, sequelize } = require('../../../db/models');
 const NotFoundError = require('../../exceptions/NotFoundError');
 
@@ -10,32 +8,35 @@ class ArticlesService {
     // db transaction
     const t = await sequelize.transaction();
 
-    try {
-      const article = await Article.create(
-        { title, referenceUrl, author, category },
-        { transaction: t }
-      );
+    const article = await Article.create(
+      { title, referenceUrl, author, category },
+      { transaction: t }
+    );
 
-      const articleId = article.id;
+    const articleId = article.id;
 
-      const articleBodies = bodies.map((body) => ({
-        articleId,
-        body,
-      }));
+    const articleBodies = bodies.map((body) => ({
+      articleId,
+      body,
+    }));
 
-      await ArticleBody.bulkCreate(articleBodies, { transaction: t });
+    await ArticleBody.bulkCreate(articleBodies, { transaction: t });
 
-      await t.commit();
+    await t.commit();
 
-      return article;
-    } catch (error) {
-      throw new ServerError('Internal server error');
-    }
+    return article;
   }
 
   async getArticles() {
     const articles = await Article.findAll({
-      attributes: ['id', 'title', 'referenceUrl', 'imageUrl', 'author', 'category'],
+      attributes: [
+        'id',
+        'title',
+        'referenceUrl',
+        'imageUrl',
+        'author',
+        'category',
+      ],
     });
 
     return articles;
@@ -51,7 +52,15 @@ class ArticlesService {
 
   async getArticleById(id) {
     const article = await Article.findByPk(id, {
-      attributes: ['id', 'title', 'referenceUrl', 'imageUrl', 'author', 'category', 'createdAt'],
+      attributes: [
+        'id',
+        'title',
+        'referenceUrl',
+        'imageUrl',
+        'author',
+        'category',
+        'createdAt',
+      ],
     });
 
     const articleBodies = await ArticleBody.findAll({
@@ -93,7 +102,7 @@ class ArticlesService {
       await t.commit();
     } catch (error) {
       await t.rollback();
-      throw new ServerError('Internal server error');
+      throw error;
     }
   }
 
@@ -107,7 +116,7 @@ class ArticlesService {
       await t.commit();
     } catch (error) {
       await t.rollback();
-      throw new ServerError('Internal server error');
+      throw error;
     }
   }
 }
