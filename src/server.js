@@ -30,7 +30,7 @@ const articles = require('./api/articles');
 const ArticlesService = require('./services/database/ArticlesService');
 const ArticlesValidator = require('./validator/articles');
 // module service ml
-const MachineLearning = require('./services/ml/MachineLearning');
+const MachineLearningPy = require('./services/ml/MachineLearningPy');
 
 const LocalStorageService = require('./services/storage/LocalStorageService');
 
@@ -54,8 +54,7 @@ const init = async () => {
   const articlesService = new ArticlesService();
   const articlesValidator = new ArticlesValidator();
 
-  const mlService = new MachineLearning();
-  await mlService.loadModel()
+  const mlService = new MachineLearningPy();
 
   const server = Hapi.server({
     port: process.env.PORT || 5000,

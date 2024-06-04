@@ -1,6 +1,6 @@
 const { Request, ResponseToolkit } = require('@hapi/hapi');
 const autoBind = require('auto-bind');
-const MachineLearning = require('../../services/ml/MachineLearning');
+const MachineLearningPy = require('../../services/ml/MachineLearningPy');
 const LocalStorageService = require('../../services/storage/LocalStorageService');
 const PredictionLogsService = require('../../services/database/PredictionLogsService');
 const PredictionsValidator = require('../../validator/predictions');
@@ -9,7 +9,7 @@ class PredictionsHandler {
   /**
    * @param {LocalStorageService} bucketService
    * @param {PredictionLogsService} predictionLogsService
-   * @param {MachineLearning} mlService
+   * @param {MachineLearningPy} mlService
    * @param {PredictionsValidator} validator
    */
   constructor(bucketService, predictionLogsService, mlService, validator) {
