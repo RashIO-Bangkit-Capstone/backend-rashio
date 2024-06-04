@@ -62,9 +62,10 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           envs: VERSION
+          timeout: 1h
           script: |
-            cd ~
-            ls -l
-            sed -i "s/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:.*/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:$VERSION/g" docker-compose.yml
-            docker compose up rashio-be-dev -d
-            docker compose up rashio-be-prod -d
+            cd ~ \
+            && ls -l \
+            && sed -i "s/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:.*/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:$VERSION/g" docker-compose.yml \
+            && docker compose up rashio-be-dev -d \
+            && docker compose up rashio-be-prod -d
