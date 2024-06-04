@@ -1,6 +1,7 @@
 /* eslint-disable max-classes-per-file */
 const tf = require('@tensorflow/tfjs-node');
 const { loadImage, createCanvas } = require('canvas');
+const InvariantError = require('../../exceptions/InvariantError');
 
 // additional layers
 class FixedDropout extends tf.layers.Layer {
@@ -63,7 +64,9 @@ class MachineLearning {
     tf.dispose([inputTensor, result]);
 
     if (percentage < 0.6) {
-      throw new Error('Disease not detected, please check the uploaded image');
+      throw new InvariantError(
+        'Disease not detected, please check the uploaded image'
+      );
     }
 
     return {
