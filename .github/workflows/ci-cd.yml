@@ -2,7 +2,7 @@ name: CI/CD
 
 permissions: write-all
 
-on: 
+on:
   push:
     tags:
       - "v**"
@@ -56,15 +56,16 @@ jobs:
         uses: appleboy/ssh-action@v1.0.3
         env:
           VERSION: ${{ needs.preparation.outputs.VERSION }}
+          COMPOSE_DIR: ${{ secrets.COMPOSE_DIR }}
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          envs: VERSION
+          envs: VERSION COMPOSE_DIR
           timeout: 1h
           script: |
-            cd ~ \
+            cd $COMPOSE_DIR \
             && sudo ls -l \
             && sudo sed -i "s/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:.*/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:$VERSION/g" docker-compose.yml \
             && sudo docker compose up rashio-be-dev -d \
