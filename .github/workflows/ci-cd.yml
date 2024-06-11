@@ -65,10 +65,6 @@ jobs:
           envs: VERSION COMPOSE_DIR
           timeout: 1h
           script: |
-            sudo su - \
-            && cd $COMPOSE_DIR \
-            && sudo ls -l \
-            && sudo sed -i "s/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:.*/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:$VERSION/g" docker-compose.yml \
-            && sudo docker compose up rashio-be-dev -d \
-            && sudo docker compose up rashio-be-prod -d
-
+            sudo sed -i "s/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:.*/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:$VERSION/g" $COMPOSE_DIR/docker-compose.yml \
+            && sudo docker compose up -f $COMPOSE_DIR/docker-compose.yml rashio-be-dev -d \
+            && sudo docker compose up -f $COMPOSE_DIR/docker-compose.yml rashio-be-prod -d
