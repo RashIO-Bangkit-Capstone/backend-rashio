@@ -66,5 +66,5 @@ jobs:
           timeout: 1h
           script: |
             sudo sed -i "s/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:.*/image: ghcr.io\/rashio-bangkit-capstone\/rashio-be:$VERSION/g" $COMPOSE_DIR/docker-compose.yml \
-            && sudo docker compose up -f $COMPOSE_DIR/docker-compose.yml rashio-be-dev -d \
-            && sudo docker compose up -f $COMPOSE_DIR/docker-compose.yml rashio-be-prod -d
+            && sudo docker compose -f $COMPOSE_DIR/docker-compose.yml up rashio-be-dev -d \
+            && sudo docker compose -f $COMPOSE_DIR/docker-compose.yml up rashio-be-prod -d
