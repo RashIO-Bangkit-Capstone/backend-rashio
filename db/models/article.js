@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
     },
     referenceUrl: DataTypes.STRING,
+    category: DataTypes.STRING,
     author: DataTypes.STRING,
   }, {
     sequelize,

@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const { ARTICLE_CATEGORIES } = require('../../utils/contans');
+const { ARTICLE_CATEGORIES } = require('../../utils/contants');
 
 module.exports = {
   PostArticlePayloadSchema: Joi.object({
